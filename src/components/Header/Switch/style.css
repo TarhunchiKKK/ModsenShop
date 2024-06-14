@@ -1,0 +1,83 @@
+.switch-label {
+    display: inline-block;
+    position: relative;
+    user-select: none;
+    width: 45px;
+    height: 21px;
+}
+
+.switch-span {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: relative;
+    background: #78788029;
+    transition: .2s;
+
+    cursor: pointer;
+    border-color: rgba(0, 0, 0, .3);
+}
+
+.switch-span::before {
+    content: '';
+    display: inline-block;
+    width: 23px;
+    height: 19px;
+    position: absolute;
+    top: 1px;
+    left: 0;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+    transition: .15s;
+}
+
+.switch-checkbox {
+    display: block;
+    width: 0;
+    height: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.switch-checkbox:checked+.switch-span {
+    background: #A18A68;
+}
+
+.switch-checkbox:checked+.switch-span::before {
+    background: #d5b78b;
+    transform: translateX(21.5px);
+}
+
+.switch-checkbox:active+.switch-label::before,
+.switch-checkbox:focus+.switch-label::before {
+    animation: checkbox-on 0.5s forwards linear;
+}
+
+.switch-checkbox:checked:active+.switch-label::before,
+.switch-checkbox:checked:focus+.switch-label::before {
+    animation: checkbox-off 0.5s forwards linear;
+}
+
+
+@keyframes checkbox-on {
+    0% {
+        box-shadow: 0 0 0 0 rgba(212, 212, 212, 0);
+    }
+
+    99% {
+        box-shadow: 0 0 0 10px rgba(212, 212, 212, 0.5);
+    }
+}
+
+@keyframes checkbox-off {
+    0% {
+        box-shadow: 0 0 0 0 rgba(154, 190, 247, 0);
+    }
+
+    99% {
+        box-shadow: 0 0 0 10px rgba(154, 190, 247, 0.5);
+    }
+}
