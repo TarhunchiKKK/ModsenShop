@@ -10,12 +10,15 @@ export const GlobalStyle = createGlobalStyle`
     }
 
     html.light {
-        --text-color: #000000;
+        --color-primary: #000000;
+        --color-secondary: #707070;
         --bg-color: #ffffff;
+        --border-color-secondary: #000000;
     }
 
     html.dark {
-        --text-color: #ffffff;
+        --color-primary: #ffffff;
+        --color-secondary: #707070;
         --bg-color: #000000;
     }
 

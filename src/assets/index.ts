@@ -6,6 +6,7 @@ import LinkedInIcon from "./linkedin.svg";
 import FacebookIcon from "./facebook.svg";
 import InstagramIcon from "./instagram.svg";
 import TwitterIcon from "./twitter.svg";
+import ArrowLRightIcon from "./arrow-right.svg";
 
 export {
     SearchIconDark,
@@ -15,5 +16,6 @@ export {
     LinkedInIcon,
     FacebookIcon,
     InstagramIcon,
-    TwitterIcon
+    TwitterIcon,
+    ArrowLRightIcon
 };

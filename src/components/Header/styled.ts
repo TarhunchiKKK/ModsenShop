@@ -31,7 +31,7 @@ export const HeaderContentWrapper = styled.div`
 `;
 
 export const LogoStartSpan = styled.span`
-    font-family: "Allerta Stencil";
+    font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 400;
     font-size: 16px;
     color: #a18a68;
@@ -46,7 +46,7 @@ export const LogoStartSpan = styled.span`
 `;
 
 export const LogoEndSpan = styled(LogoStartSpan)`
-    color: var(--text-color);
+    color: var(--color-primary);
 `;
 
 export const HeaderOptionsWrapper = styled.div`
@@ -66,11 +66,12 @@ export const HeaderOptionsWrapper = styled.div`
 `;
 
 export const ShopLinkSpan = styled.span`
-    font-family: "DM Sans", sans-serif;
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 14px;
     font-weight: 400;
     margin-right: 0px;
     cursor: pointer;
+    color: var(--color-primary);
 
     @media (min-width: 420px) {
         font-size: 16px;

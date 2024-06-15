@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledFooter = styled.footer``;
 
 export const FooterContentWrapper = styled.div`
-    padding: 55px 0px 92px;
+    padding: 40px 0px 92px;
     border-top: 1px solid #d8d8d8;
 `;
 
@@ -27,14 +27,14 @@ export const FooterContentSecond = styled(FooterContentFirst)`
 `;
 
 export const CopyrightGraySpan = styled.span`
-    font-family: "DM Sans";
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 16px;
     font-weight: 400;
-    color: #707070;
+    color: var(--color-secondary);
 `;
 
 export const CopyrightRegularSpan = styled(CopyrightGraySpan)`
-    color: var(--text-color);
+    color: var(--color-primary);
 `;
 
 export const FooterIconsWrapper = styled.div`

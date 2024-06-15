@@ -1,11 +1,9 @@
-interface ITheme {
+export const theme = {
     fonts: {
-        primary: string;
-    };
-}
-
-export const theme: ITheme = {
-    fonts: {
-        primary: '"DM Sans", sans-serif'
+        primary: "DM Sans, sans-serif",
+        secondary: "'Allerta Stencil', sans-serif"
+    },
+    colors: {
+        error: "red"
     }
 };
