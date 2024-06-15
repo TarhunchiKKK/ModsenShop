@@ -1,1 +1,0 @@
-export { isDarkTheme } from "./isDarkMode";

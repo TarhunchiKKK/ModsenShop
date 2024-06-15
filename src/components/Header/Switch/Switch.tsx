@@ -1,14 +1,16 @@
-import { toggleColorTheme } from "../../../utils";
-import { isDarkTheme } from "../helpers";
+import { isDarkTheme } from "../../../utils";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggleTheme } from "../../../store";
 import "./style.css";
 
 export function Switch() {
+    const dispatch = useDispatch();
     const [isChecked, setIsChecked] = useState<boolean>(() => isDarkTheme());
 
     const handleToggleTheme = (_: React.MouseEvent<HTMLInputElement>) => {
         setIsChecked(false);
-        toggleColorTheme();
+        dispatch(toggleTheme());
     };
 
     return (

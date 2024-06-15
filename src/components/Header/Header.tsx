@@ -2,11 +2,20 @@ import { Container } from "../Container";
 import {
     HeaderContentWrapper,
     HeaderOptionsWrapper,
+    LogoEndSpan,
+    LogoStartSpan,
     ShopLinkSpan,
     StyledHeader
 } from "./styled";
-import { BasketIcon, Logo, SearchIcon } from "../../assets";
+import {
+    BasketIconDark,
+    BasketIconLight,
+    Logo,
+    SearchIconDark,
+    SearchIconLight
+} from "../../assets";
 import { Switch } from "./Switch";
+import { IconThemeWrapper } from "../IconWrapper";
 
 export function Header() {
     return (
@@ -14,13 +23,22 @@ export function Header() {
             <Container>
                 <HeaderContentWrapper>
                     <div>
-                        <Logo />
+                        <LogoStartSpan>Modsen S</LogoStartSpan>
+                        <LogoEndSpan>HOPPE</LogoEndSpan>
+                        {/* <Logo /> */}
                     </div>
                     <HeaderOptionsWrapper>
                         <ShopLinkSpan>Shop</ShopLinkSpan>
                         <Switch />
-                        <SearchIcon />
-                        <BasketIcon />
+                        <IconThemeWrapper>
+                            <SearchIconDark />
+                            <SearchIconLight />
+                        </IconThemeWrapper>
+
+                        <IconThemeWrapper>
+                            <BasketIconDark />
+                            <BasketIconLight />
+                        </IconThemeWrapper>
                     </HeaderOptionsWrapper>
                 </HeaderContentWrapper>
             </Container>

@@ -1,7 +1,15 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-    padding-top: 64px;
+    padding-top: 10px;
+
+    @media (min-width: 768px) {
+        padding-top: 24px;
+    }
+
+    @media (min-width: 1024px) {
+        padding-top: 64px;
+    }
 `;
 
 export const HeaderContentWrapper = styled.div`
@@ -9,16 +17,36 @@ export const HeaderContentWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding-bottom: 17px;
-
+    padding: 0px 7px 10px;
     border-bottom: 1px solid #d8d8d8;
+
+    @media (min-width: 640px) {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+
+    @media (min-width: 1024px) {
+        padding-bottom: 17px;
+    }
 `;
 
-export const LogoWrapper = styled.div``;
+export const LogoStartSpan = styled.span`
+    font-family: "Allerta Stencil";
+    font-weight: 400;
+    font-size: 16px;
+    color: #a18a68;
 
-export const LogoIcon = styled.img`
-    width: 100%;
-    height: 100%;
+    @media (min-width: 420px) {
+        font-size: 24px;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 35px;
+    }
+`;
+
+export const LogoEndSpan = styled(LogoStartSpan)`
+    color: var(--text-color);
 `;
 
 export const HeaderOptionsWrapper = styled.div`
@@ -26,16 +54,31 @@ export const HeaderOptionsWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 42px;
+    gap: 10px;
+
+    @media (min-width: 360px) {
+        gap: 20px;
+    }
+
+    @media (min-width: 540px) {
+        gap: 42px;
+    }
 `;
 
 export const ShopLinkSpan = styled.span`
     font-family: "DM Sans", sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
-    line-height: 27px;
-    text-align: left;
-    margin-right: 62px;
+    margin-right: 0px;
+    cursor: pointer;
+
+    @media (min-width: 420px) {
+        font-size: 16px;
+    }
+
+    @media (min-width: 1024px) {
+        margin-right: 62px;
+    }
 `;
 
 export const ShopLink = styled.span``;
