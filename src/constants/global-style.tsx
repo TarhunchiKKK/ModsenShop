@@ -8,4 +8,19 @@ export const GlobalStyle = createGlobalStyle`
         list-style: none;
         box-sizing: border-box;
     }
+
+    html.light {
+        --text-color: #000000;
+        --bg-color: #ffffff;
+    }
+
+    html.dark {
+        --text-color: #ffffff;
+        --bg-color: #000000;
+    }
+
+    body {
+        background-color: var(--bg-color);
+        color: var(--text-color);
+    }
 `;

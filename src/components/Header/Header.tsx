@@ -2,6 +2,7 @@ import { Container } from "../Container";
 import {
     HeaderContentWrapper,
     HeaderOptionsWrapper,
+    ShopLinkSpan,
     StyledHeader
 } from "./styled";
 import { BasketIcon, Logo, SearchIcon } from "../../assets";
@@ -16,8 +17,7 @@ export function Header() {
                         <Logo />
                     </div>
                     <HeaderOptionsWrapper>
-                        <span>Shop</span>
-                        {/* <input type="checkbox" /> */}
+                        <ShopLinkSpan>Shop</ShopLinkSpan>
                         <Switch />
                         <SearchIcon />
                         <BasketIcon />
