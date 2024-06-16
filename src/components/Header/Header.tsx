@@ -24,13 +24,13 @@ export function Header() {
                         <ShopLinkSpan>Shop</ShopLinkSpan>
                         <Switch />
                         <IconThemeWrapper>
-                            <SearchIconDark />
-                            <SearchIconLight />
+                            <img src={SearchIconDark} alt="Basket" />
+                            <img src={SearchIconLight} alt="Basket" />
                         </IconThemeWrapper>
 
                         <IconThemeWrapper>
-                            <BasketIconDark />
-                            <BasketIconLight />
+                            <img src={BasketIconDark} alt="Basket" />
+                            <img src={BasketIconLight} alt="Basket" />
                         </IconThemeWrapper>
                     </HeaderOptionsWrapper>
                 </HeaderContentWrapper>

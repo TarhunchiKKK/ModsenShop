@@ -38,7 +38,8 @@ export function FooterForm() {
             {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
 
             <Button type="submit">
-                <ArrowLRightIcon />
+                {/* <ArrowLRightIcon /> */}
+                <img src={ArrowLRightIcon} alt="Submit" />
             </Button>
         </Form>
     );

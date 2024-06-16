@@ -38,10 +38,10 @@ export function Footer() {
                         </div>
 
                         <FooterIconsWrapper>
-                            <FooterIcon link="" icon={<LinkedInIcon />} />
-                            <FooterIcon link="" icon={<FacebookIcon />} />
-                            <FooterIcon link="" icon={<InstagramIcon />} />
-                            <FooterIcon link="" icon={<TwitterIcon />} />
+                            <FooterIcon link="" icon={LinkedInIcon} />
+                            <FooterIcon link="" icon={FacebookIcon} />
+                            <FooterIcon link="" icon={InstagramIcon} />
+                            <FooterIcon link="" icon={TwitterIcon} />
                         </FooterIconsWrapper>
                     </FooterContentSecond>
                 </FooterContentWrapper>
