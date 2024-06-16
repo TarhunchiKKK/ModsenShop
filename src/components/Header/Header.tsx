@@ -1,4 +1,7 @@
 import { Container } from "../Container";
+import { Switch } from "./Switch";
+import { IconThemeWrapper } from "../IconThemeWrapper";
+import { BasketIconDark, BasketIconLight, SearchIconDark, SearchIconLight } from "../../assets";
 import {
     HeaderContentWrapper,
     HeaderOptionsWrapper,
@@ -7,9 +10,6 @@ import {
     ShopLinkSpan,
     StyledHeader
 } from "./styled";
-import { BasketIconDark, BasketIconLight, SearchIconDark, SearchIconLight } from "../../assets";
-import { Switch } from "./Switch";
-import { IconThemeWrapper } from "../IconThemeWrapper";
 
 export function Header() {
     return (

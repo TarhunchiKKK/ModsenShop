@@ -80,6 +80,11 @@ export const ShopLinkSpan = styled.span`
     @media (min-width: 1024px) {
         margin-right: 62px;
     }
+
+    &:hover {
+        transition: ${({ theme }) => theme.transitions.links};
+        color: ${({ theme }) => theme.colors.logo};
+    }
 `;
 
 export const ShopLink = styled.span``;

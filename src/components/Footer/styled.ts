@@ -9,9 +9,15 @@ export const FooterContentWrapper = styled.div`
 
 export const FooterContentFirst = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    gap: 30px;
+
+    @media (min-width: 768px) {
+        flex-direction: row;
+        gap: 30px;
+    }
 `;
 
 export const FooterLinksWrapper = styled.div`
@@ -19,18 +25,57 @@ export const FooterLinksWrapper = styled.div`
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    gap: 41px;
+    width: 98%;
+
+    @media (min-width: 460px) {
+        gap: 40px;
+        width: auto;
+    }
+
+    @media (min-width: 768px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 1024px) {
+        gap: 41px;
+    }
 `;
 
-export const FooterContentSecond = styled(FooterContentFirst)`
-    margin-top: 48px;
+export const FooterContentSecond = styled.div`
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    gap: 18px;
+
+    @media (min-width: 460px) {
+        flex-direction: row;
+        gap: 10px;
+    }
+
+    @media (min-width: 768px) {
+        margin-top: 48px;
+    }
 `;
 
 export const CopyrightGraySpan = styled.span`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     color: var(--color-secondary);
+
+    @media (min-width: 360px) {
+        font-size: 16px;
+    }
+
+    @media (min-width: 460px) {
+        font-size: 14px;
+    }
+
+    @media (min-width: 540px) {
+        font-size: 16px;
+    }
 `;
 
 export const CopyrightRegularSpan = styled(CopyrightGraySpan)`
@@ -43,4 +88,12 @@ export const FooterIconsWrapper = styled.div`
     justify-content: space-between;
     align-items: center;
     gap: 29.5px;
+
+    @media (min-width: 460px) {
+        gap: 24px;
+    }
+
+    @media (min-width: 540px) {
+        gap: 29.5px;
+    }
 `;

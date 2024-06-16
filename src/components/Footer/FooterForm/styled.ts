@@ -1,8 +1,20 @@
 import styled from "styled-components";
 
 export const Form = styled.form`
-    width: 396px;
     position: relative;
+    width: 90%;
+
+    @media (min-width: 460px) {
+        width: 396px;
+    }
+
+    @media (min-width: 768px) {
+        width: 300px;
+    }
+
+    @media (min-width: 1024px) {
+        width: 396px;
+    }
 `;
 
 export const Input = styled.input`
