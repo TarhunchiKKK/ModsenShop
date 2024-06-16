@@ -1,7 +1,7 @@
 import { Container } from "../Container";
 import { Switch } from "./Switch";
 import { IconThemeWrapper } from "../IconThemeWrapper";
-import { BasketIconDark, BasketIconLight, SearchIconDark, SearchIconLight } from "../../assets";
+import { BasketIconDark, BasketIconLight, SearchIconDark, SearchIconLight } from "@/assets";
 import { Link } from "react-router-dom";
 import {
     HeaderContentWrapper,

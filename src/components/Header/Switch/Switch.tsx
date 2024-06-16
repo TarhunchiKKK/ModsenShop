@@ -1,6 +1,6 @@
 import { useDispatch } from "react-redux";
-import { toggleTheme, useAppSelector } from "../../../store";
-import { THEMES } from "../../../types";
+import { toggleTheme, useAppSelector } from "@/store";
+import { THEMES } from "@/types";
 import "./style.css";
 
 export function Switch() {

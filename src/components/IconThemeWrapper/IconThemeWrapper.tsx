@@ -1,5 +1,5 @@
-import { useAppSelector } from "../../store";
-import { THEMES } from "../../types";
+import { useAppSelector } from "@/store";
+import { THEMES } from "@/types";
 
 interface IIconWrapperProps {
     children: [JSX.Element, JSX.Element];

@@ -1,4 +1,4 @@
-import { THEMES } from "../types";
+import { THEMES } from "@/types";
 
 export function toggleColorTheme(themeKey: string) {
     const currentTheme: THEMES = localStorage.getItem(themeKey) as THEMES;

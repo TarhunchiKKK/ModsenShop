@@ -2,7 +2,7 @@ import { Container } from "../Container";
 import { FooterForm } from "./FooterForm";
 import { FooterLink } from "./FooterLink";
 import { FooterIcon } from "./FooterIcon";
-import { LinkedInIcon, FacebookIcon, InstagramIcon, TwitterIcon } from "../../assets";
+import { LinkedInIcon, FacebookIcon, InstagramIcon, TwitterIcon } from "@/assets";
 import {
     CopyrightGraySpan,
     CopyrightRegularSpan,

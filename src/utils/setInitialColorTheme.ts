@@ -1,4 +1,4 @@
-import { THEMES } from "../types";
+import { THEMES } from "@/types";
 
 export function setInitialColorTheme(themeKey: string) {
     const currentTheme: THEMES | null = localStorage.getItem(themeKey) as THEMES | null;

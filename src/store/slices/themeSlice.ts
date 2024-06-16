@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { THEMES } from "../../types";
-import { setInitialColorTheme, toggleColorTheme } from "../../utils";
+import { THEMES } from "@/types";
+import { setInitialColorTheme, toggleColorTheme } from "@/utils";
 
 const THEME_KEY: string = "theme";
 

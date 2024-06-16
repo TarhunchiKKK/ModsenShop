@@ -9,8 +9,13 @@ export function sendNewsletter(email: string) {
     };
 
     emailjs
-        .send("service_g0vodbf", "template_7q84no6", params, {
-            publicKey: "xf8c9eT14OwV_44xi"
-        })
+        .send(
+            import.meta.env.VITE_MAIL_SERVICE_ID!,
+            import.meta.env.VITE_MAIL_TEMPLATE_ID!,
+            params,
+            {
+                publicKey: import.meta.env.VITE_MAIL_PUBLIC_KEY!
+            }
+        )
         .then(() => console.log("Email sended"));
 }

@@ -1,7 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { ArrowLRightIcon } from "../../../assets";
 import { Button, ErrorMessage, Form, Input } from "./styled";
-import { sendNewsletter } from "../../../utils";
+import { ArrowLRightIcon } from "@/assets";
+import { sendNewsletter } from "@/utils";
 
 type Inputs = {
     email: string;
@@ -38,7 +38,6 @@ export function FooterForm() {
             {errors.email && <ErrorMessage>{errors.email.message}</ErrorMessage>}
 
             <Button type="submit">
-                {/* <ArrowLRightIcon /> */}
                 <img src={ArrowLRightIcon} alt="Submit" />
             </Button>
         </Form>

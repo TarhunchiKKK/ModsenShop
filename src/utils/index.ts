@@ -1,3 +1,3 @@
 export { setInitialColorTheme } from "./setInitialColorTheme";
 export { toggleColorTheme } from "./toggleColorTheme";
-export { sendNewsletter } from "./sendNewsletter";
+export { sendNewsletter } from "./sendMail";
