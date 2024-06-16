@@ -1,6 +1,7 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import { ArrowLRightIcon } from "../../../assets";
 import { Button, ErrorMessage, Form, Input } from "./styled";
+import { sendNewsletter } from "../../../utils";
 
 type Inputs = {
     email: string;
@@ -16,6 +17,7 @@ export function FooterForm() {
 
     const onSubmit: SubmitHandler<Inputs> = (data) => {
         console.log(data);
+        sendNewsletter(data.email);
         reset();
     };
 
@@ -27,7 +29,7 @@ export function FooterForm() {
                 {...register("email", {
                     required: "Email is required",
                     pattern: {
-                        value: /^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/,
+                        value: /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/,
                         message: "Enter valid email"
                     }
                 })}
