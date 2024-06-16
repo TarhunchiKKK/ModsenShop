@@ -6,19 +6,19 @@ module.exports = {
     entry: "./src/index.tsx",
 
     resolve: {
-        extensions: [".tsx", ".ts", ".js"],
+        extensions: [".tsx", ".ts", ".js"]
     },
 
     output: {
         path: path.join(__dirname, "/dist"),
-        filename: "bundle.js",
+        filename: "bundle.js"
     },
 
     plugins: [
         new HtmlWebpackPlugin({
-            template: "./src/index.html",
+            template: "./src/index.html"
         }),
-        new ReactRefreshWebpackPlugin(),
+        new ReactRefreshWebpackPlugin()
     ],
 
     module: {
@@ -29,19 +29,23 @@ module.exports = {
                 use: {
                     loader: "babel-loader",
                     options: {
-                        presets: ["@babel/preset-env", "@babel/preset-react"],
-                    },
-                },
+                        presets: ["@babel/preset-env", "@babel/preset-react"]
+                    }
+                }
             },
             {
                 test: /\.(ts|tsx)$/,
                 exclude: /node_modules/,
-                use: "babel-loader",
+                use: "babel-loader"
             },
             {
                 test: /\.css$/i,
-                use: ["style-loader", "css-loader"],
+                use: ["style-loader", "css-loader"]
             },
-        ],
-    },
+            {
+                test: /\.svg$/,
+                use: ["@svgr/webpack"]
+            }
+        ]
+    }
 };

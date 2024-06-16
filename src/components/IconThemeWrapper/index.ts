@@ -1,0 +1,1 @@
+export { IconThemeWrapper } from "./IconThemeWrapper";
