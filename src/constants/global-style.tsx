@@ -9,11 +9,20 @@ export const GlobalStyle = createGlobalStyle`
         box-sizing: border-box;
     }
 
+    :root {
+        --font-primary: "DM Sans", sans-serif;
+        --font-secondary: "Allerta Stencil", sans-serif;
+
+        --color-logo: #A18A68;
+        --color-error: red;
+
+        --transition-links: all 0.5s;
+    }
+
     html.light {
         --color-primary: #000000;
         --color-secondary: #707070;
         --bg-color: #ffffff;
-        --border-color-secondary: #000000;
     }
 
     html.dark {

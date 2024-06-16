@@ -25,7 +25,7 @@ export const Input = styled.input`
     padding-bottom: 13px;
     background: inherit;
 
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: var(--font-primary);
     font-size: 16px;
     color: var(--color-secondary);
 `;
@@ -44,8 +44,8 @@ export const ErrorMessage = styled.span`
     position: absolute;
     top: calc(100% + 4px);
     left: 0;
-    color: ${({ theme }) => theme.colors.error};
-    font-family: ${({ theme }) => theme.fonts.primary};
+    color: var(--color-error);
+    font-family: var(--font-primary);
     font-weight: 300;
     font-size: 14px;
 `;

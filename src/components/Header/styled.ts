@@ -31,10 +31,10 @@ export const HeaderContentWrapper = styled.div`
 `;
 
 export const LogoStartSpan = styled.span`
-    font-family: ${({ theme }) => theme.fonts.secondary};
+    font-family: var(--font-secondary);
     font-weight: 400;
     font-size: 16px;
-    color: ${({ theme }) => theme.colors.logo};
+    color: var(--color-logo);
 
     @media (min-width: 420px) {
         font-size: 24px;
@@ -66,7 +66,7 @@ export const HeaderOptionsWrapper = styled.div`
 `;
 
 export const ShopLinkSpan = styled.span`
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 400;
     margin-right: 0px;
@@ -81,8 +81,8 @@ export const ShopLinkSpan = styled.span`
     }
 
     &:hover {
-        transition: ${({ theme }) => theme.transitions.links};
-        color: ${({ theme }) => theme.colors.logo};
+        transition: var(--transition-links);
+        color: var(--color-logo);
     }
 `;
 

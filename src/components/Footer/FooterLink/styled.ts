@@ -1,7 +1,7 @@
 import { styled } from "styled-components";
 
 export const FooterLinkSpan = styled.span`
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: var(--font-primary);
     font-size: 11px;
     font-weight: 400;
     cursor: pointer;
@@ -20,7 +20,7 @@ export const FooterLinkSpan = styled.span`
     }
 
     &:hover {
-        transition: ${({ theme }) => theme.transitions.links};
-        color: ${({ theme }) => theme.colors.logo};
+        transition: var(--transition-links);
+        color: var(--color-logo);
     }
 `;

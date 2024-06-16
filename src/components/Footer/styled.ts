@@ -60,7 +60,7 @@ export const FooterContentSecond = styled.div`
 `;
 
 export const CopyrightGraySpan = styled.span`
-    font-family: ${({ theme }) => theme.fonts.primary};
+    font-family: var(--font-primary);
     font-size: 14px;
     font-weight: 400;
     color: var(--color-secondary);
