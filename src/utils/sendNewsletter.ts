@@ -1,7 +1,7 @@
 import emailjs from "@emailjs/browser";
 
 export function sendNewsletter(email: string) {
-    let params = {
+    const params = {
         subject: "Modsen SHOPPE Newsletter",
         email: email,
         message: "Newsletter",

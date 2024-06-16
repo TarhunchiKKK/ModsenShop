@@ -1,18 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { GlobalStyle } from "./constants";
-import { setInitialColorTheme } from "./utils";
+import { GlobalStyle, router } from "./constants";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { ErrorPage } from "./pages/ErrorPage";
-
-setInitialColorTheme();
+import { RouterProvider } from "react-router-dom";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <Provider store={store}>
             <GlobalStyle />
-            <ErrorPage />
+            <RouterProvider router={router} />
         </Provider>
     </React.StrictMode>
 );

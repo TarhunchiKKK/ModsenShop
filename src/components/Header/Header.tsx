@@ -2,6 +2,7 @@ import { Container } from "../Container";
 import { Switch } from "./Switch";
 import { IconThemeWrapper } from "../IconThemeWrapper";
 import { BasketIconDark, BasketIconLight, SearchIconDark, SearchIconLight } from "../../assets";
+import { Link } from "react-router-dom";
 import {
     HeaderContentWrapper,
     HeaderOptionsWrapper,
@@ -16,13 +17,17 @@ export function Header() {
         <StyledHeader>
             <Container>
                 <HeaderContentWrapper>
-                    <div>
+                    <Link to="/">
                         <LogoStartSpan>{"Modsen S"}</LogoStartSpan>
                         <LogoEndSpan>{"HOPPE"}</LogoEndSpan>
-                    </div>
+                    </Link>
                     <HeaderOptionsWrapper>
-                        <ShopLinkSpan>Shop</ShopLinkSpan>
+                        <Link to="/shop" style={{ color: "inherit" }}>
+                            <ShopLinkSpan>Shop</ShopLinkSpan>
+                        </Link>
+
                         <Switch />
+
                         <IconThemeWrapper>
                             <img src={SearchIconDark} alt="Basket" />
                             <img src={SearchIconLight} alt="Basket" />

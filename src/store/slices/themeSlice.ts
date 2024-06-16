@@ -1,24 +1,27 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { THEME_KEY } from "../../constants";
 import { THEMES } from "../../types";
-import { toggleColorTheme } from "../../utils";
+import { setInitialColorTheme, toggleColorTheme } from "../../utils";
+
+const THEME_KEY: string = "theme";
 
 interface ThemeState {
     theme: THEMES;
 }
 
-const initialState: ThemeState = {
-    theme: (localStorage.getItem(THEME_KEY) as THEMES) || THEMES.LIGHT
-};
+function getInitialState(): ThemeState {
+    setInitialColorTheme(THEME_KEY);
+    return {
+        theme: (localStorage.getItem(THEME_KEY) as THEMES) || THEMES.LIGHT
+    };
+}
 
 export const themeSlice = createSlice({
     name: "theme",
-    initialState,
+    initialState: getInitialState(),
     reducers: {
         toggleTheme(state: ThemeState) {
-            state.theme =
-                state.theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
-            toggleColorTheme();
+            state.theme = state.theme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
+            toggleColorTheme(THEME_KEY);
         }
     }
 });

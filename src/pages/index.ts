@@ -1,1 +1,2 @@
-export { Layout } from "./_Layout";
+export { Layout } from "./Layout";
+export { ErrorPage } from "./ErrorPage";

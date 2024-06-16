@@ -1,6 +1,6 @@
-import { isDarkTheme } from "../../../utils";
 import { useDispatch } from "react-redux";
-import { toggleTheme } from "../../../store";
+import { toggleTheme, useAppSelector } from "../../../store";
+import { THEMES } from "../../../types";
 import "./style.css";
 
 export function Switch() {
@@ -11,12 +11,9 @@ export function Switch() {
             <input
                 className="switch-checkbox"
                 type="checkbox"
-                defaultChecked={isDarkTheme()}
+                defaultChecked={useAppSelector((state) => state.theme.theme) === THEMES.DARK}
             />
-            <span
-                className="switch-span"
-                onClick={() => dispatch(toggleTheme())}
-            ></span>
+            <span className="switch-span" onClick={() => dispatch(toggleTheme())}></span>
         </label>
     );
 }

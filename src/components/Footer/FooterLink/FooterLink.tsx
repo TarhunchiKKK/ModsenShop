@@ -8,8 +8,8 @@ interface IFooterLinkProps {
 
 export function FooterLink({ content, link }: IFooterLinkProps) {
     return (
-        // <Link to={link}>
-        <FooterLinkSpan>{content}</FooterLinkSpan>
-        // </Link>
+        <Link to={link} style={{ color: "inherit" }}>
+            <FooterLinkSpan>{content}</FooterLinkSpan>
+        </Link>
     );
 }
