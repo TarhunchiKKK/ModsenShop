@@ -34,7 +34,7 @@ export const LogoStartSpan = styled.span`
     font-family: ${({ theme }) => theme.fonts.secondary};
     font-weight: 400;
     font-size: 16px;
-    color: #a18a68;
+    color: ${({ theme }) => theme.colors.logo};
 
     @media (min-width: 420px) {
         font-size: 24px;
@@ -71,7 +71,6 @@ export const ShopLinkSpan = styled.span`
     font-weight: 400;
     margin-right: 0px;
     cursor: pointer;
-    color: var(--color-primary);
 
     @media (min-width: 420px) {
         font-size: 16px;

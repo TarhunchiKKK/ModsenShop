@@ -24,6 +24,6 @@ export const GlobalStyle = createGlobalStyle`
 
     body {
         background-color: var(--bg-color);
-        color: var(--text-color);
+        color: var(--color-primary);
     }
 `;

@@ -5,7 +5,7 @@ import { ThemeProvider } from "styled-components";
 import { setInitialColorTheme } from "./utils";
 import { Provider } from "react-redux";
 import { store } from "./store";
-import { Footer, Header } from "./components";
+import { ErrorPage } from "./pages/ErrorPage";
 
 setInitialColorTheme();
 
@@ -14,9 +14,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
         <Provider store={store}>
             <ThemeProvider theme={theme}>
                 <GlobalStyle />
-                <Header />
-                <div style={{ marginBottom: "50px" }}></div>
-                <Footer />
+                <ErrorPage />
             </ThemeProvider>
         </Provider>
     </React.StrictMode>
