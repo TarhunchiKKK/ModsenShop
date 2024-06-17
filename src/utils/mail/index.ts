@@ -1,0 +1,1 @@
+export { sendNewsletter } from "./sendNewsletter";

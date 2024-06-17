@@ -1,3 +1,3 @@
 export { router } from "./router";
-export { API } from "./api";
+export { BASE_URL } from "./url";
 export { GlobalStyle } from "./global-style";

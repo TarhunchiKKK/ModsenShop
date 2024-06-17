@@ -1,3 +1,2 @@
-export { setInitialColorTheme } from "./setInitialColorTheme";
-export { toggleColorTheme } from "./toggleColorTheme";
-export { sendNewsletter } from "./sendMail";
+export * from "./mail";
+export * from "./theme";

@@ -25,6 +25,18 @@ export const ContentText = styled.p`
     font-weight: 400;
     text-align: center;
     color: var(--color-secondary);
+
+    @media (min-width: 440px) {
+        font-size: 16px;
+    }
+
+    @media (min-width: 540px) {
+        font-size: 18px;
+    }
+
+    @media (min-width: 768px) {
+        font-size: 20px;
+    }
 `;
 
 export const Button = styled.button`
