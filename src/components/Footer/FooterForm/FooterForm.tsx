@@ -2,6 +2,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, ErrorMessage, Form, Input } from "./styled";
 import { ArrowLRightIcon } from "@/assets";
 import { sendNewsletter } from "@/utils";
+import { EMAIL_PATTERN } from "@/constants";
 
 type Inputs = {
     email: string;
@@ -29,7 +30,7 @@ export function FooterForm() {
                 {...register("email", {
                     required: "Email is required",
                     pattern: {
-                        value: /^[-a-z0-9!#$%&'*+/=?^_`{|}~]+(?:\.[-a-z0-9!#$%&'*+/=?^_`{|}~]+)*@(?:[a-z0-9]([-a-z0-9]{0,61}[a-z0-9])?\.)*(?:aero|arpa|asia|biz|cat|com|coop|edu|gov|info|int|jobs|mil|mobi|museum|name|net|org|pro|tel|travel|[a-z][a-z])$/,
+                        value: EMAIL_PATTERN,
                         message: "Enter valid email"
                     }
                 })}

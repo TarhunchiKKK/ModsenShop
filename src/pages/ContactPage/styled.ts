@@ -67,6 +67,13 @@ export const Description = styled.p`
     }
 `;
 
+export const Form = styled.form`
+    min-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`;
+
 export const FirstInputsPairWrapper = styled.div`
     width: 100%;
     margin-bottom: 50px;
