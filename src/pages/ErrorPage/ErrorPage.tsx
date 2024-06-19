@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getSectionHeight } from "../helpers";
+import { getSectionHeight } from "./helpers";
 import { Button, ContentText, ContentWrapper, Wrapper } from "./styled";
 import { Container, Title } from "@/components";
 
