@@ -17,7 +17,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ShopLinkSpan = styled.span`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 14px;
     font-weight: 400;
     margin-right: 0px;
@@ -31,7 +31,7 @@ export const ShopLinkSpan = styled.span`
     }
 
     &:hover {
-        transition: var(--transition-links);
-        color: var(--color-logo);
+        transition: ${({ theme }) => theme.transitions.links};
+        color: ${({ theme }) => theme.colors.main.logo};
     }
 `;

@@ -75,10 +75,10 @@ export const FooterContentSecond = styled.div`
 `;
 
 export const CopyrightGraySpan = styled.span`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     font-weight: 400;
-    color: var(--color-secondary);
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
 
     @media (min-width: 460px) {
         font-size: 14px;
@@ -91,6 +91,6 @@ export const CopyrightGraySpan = styled.span`
 
 export const CopyrightRegularSpan = styled(CopyrightGraySpan)`
     @media (min-width: 640px) {
-        color: var(--color-primary);
+        color: ${({ theme }) => theme.colors.main.black};
     }
 `;

@@ -17,18 +17,17 @@ export const FooterIconsWrapper = styled.div`
 `;
 
 export const FollowSpan = styled.span`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    color: var(--color-primary);
     position: relative;
 
     &::after {
         content: "";
         display: inline-block;
         width: 47px;
-        border: 1px solid var(--color-primary);
+        border: 1px solid ${({ theme }) => theme.colors.main.black};
         margin-left: 16px;
         margin-right: 5px;
     }

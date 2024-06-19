@@ -19,12 +19,12 @@ export const ContentText = styled.p`
     texp-aligh: center;
     width: 163px;
 
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     line-height: 20px;
     font-weight: 400;
     text-align: center;
-    color: var(--color-secondary);
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
 
     @media (min-width: 440px) {
         font-size: 16px;
@@ -43,14 +43,14 @@ export const ContentText = styled.p`
 `;
 
 export const Button = styled.button`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     font-weight: 400;
 
     background: none;
-    border: 1px solid var(--color-primary);
+    color: ${({ theme }) => theme.colors.main.black};
+    border: 1px solid ${({ theme }) => theme.colors.main.black};
     border-radius: 4px;
-    color: var(--color-primary);
     text-decoration: uppercase;
 
     padding: 6px 25px;
@@ -63,6 +63,7 @@ export const Button = styled.button`
     }
 
     &:hover {
-        background: var(--color-logo);
+        background: ${({ theme }) => theme.colors.main.logo};
+        transition: ${({ theme }) => theme.transitions.buttons};
     }
 `;

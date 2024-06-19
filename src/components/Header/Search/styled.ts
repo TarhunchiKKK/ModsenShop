@@ -20,10 +20,10 @@ export const Input = styled.input`
     border: none;
     outline: none;
 
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     font-weight: 400;
     line-height: 20px;
-    color: var(--color-secondary);
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
     background-color: inherit;
 `;

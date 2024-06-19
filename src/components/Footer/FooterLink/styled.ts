@@ -1,12 +1,12 @@
 import { styled } from "styled-components";
 
 export const FooterLinkSpan = styled.span`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     font-weight: 400;
     cursor: pointer;
     text-transform: uppercase;
-    color: var(--color-secondary);
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
 
     @media (min-width: 500px) {
         font-size: 14px;
@@ -17,7 +17,7 @@ export const FooterLinkSpan = styled.span`
     }
 
     &:hover {
-        transition: var(--transition-links);
-        color: var(--color-logo);
+        transition: ${({ theme }) => theme.transitions.links};
+        color: ${({ theme }) => theme.colors.main.logo};
     }
 `;

@@ -13,9 +13,9 @@ export const StyledInput = styled.input<{ $isMessage: boolean }>`
     border-bottom: 1px solid #d8d8d8;
     background: inherit;
 
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 16px;
-    color: var(--color-secondary);
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
 
     padding-bottom: ${(props) => (props.$isMessage ? "65px" : "5px")};
 
@@ -33,8 +33,8 @@ export const ErrorMessage = styled.span`
     top: calc(100% + 4px);
     left: 0;
 
-    color: var(--color-error);
-    font-family: var(--font-primary);
+    color: ${({ theme }) => theme.colors.service.error};
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 300;
     font-size: 14px;
 `;

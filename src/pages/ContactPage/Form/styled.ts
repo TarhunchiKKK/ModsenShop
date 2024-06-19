@@ -44,15 +44,15 @@ export const Button = styled.button`
     padding: 16px 0px;
     margin-top: 24px;
 
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 16px;
     font-weight: 700;
     text-transform: uppercase;
 
     border: none;
     border-radius: 4px;
-    color: var(--bg-color);
-    background-color: var(--color-primary);
+    color: ${({ theme }) => theme.colors.main.white};
+    background-color: ${({ theme }) => theme.colors.main.black};
 
     cursor: pointer;
 

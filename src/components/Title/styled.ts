@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledTitle = styled.h2`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 26px;
     font-weight: 500;
 

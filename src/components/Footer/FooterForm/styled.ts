@@ -21,14 +21,14 @@ export const Input = styled.input`
     width: 100%;
     outline: none;
     border: none;
-    border-bottom: 1px solid var(--color-primary);
+    border-bottom: 1px solid ${({ theme }) => theme.colors.main.black};
 
     padding-bottom: 8px;
     background: inherit;
 
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 16px;
-    color: var(--color-secondary);
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
 
     @media (min-width: 500px) {
         padding-bottom: 13px;
@@ -52,17 +52,16 @@ export const ErrorMessage = styled.span`
     position: absolute;
     top: calc(100% + 4px);
     left: 0;
-    color: var(--color-error);
-    font-family: var(--font-primary);
+    color: ${({ theme }) => theme.colors.service.error};
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-weight: 300;
     font-size: 14px;
 `;
 
 export const Label = styled.label`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 12px;
     font-weight: 400;
-    color: var(--color-primary);
 
     display: flex;
     flex-direction: row;
@@ -80,5 +79,5 @@ export const Checkbox = styled.input`
     height: 13px;
 
     border-radius: 2px;
-    border: 1px solid var(--color-secondary);
+    border: 1px solid ${({ theme }) => theme.colors.neutral.darkGray};
 `;

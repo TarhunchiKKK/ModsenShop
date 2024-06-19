@@ -32,10 +32,10 @@ export const HeaderContentWrapper = styled.div`
 `;
 
 export const LogoStartSpan = styled.span`
-    font-family: var(--font-secondary);
+    font-family: ${({ theme }) => theme.fonts.logo};
     font-weight: 400;
     font-size: 16px;
-    color: var(--color-logo);
+    color: ${({ theme }) => theme.colors.main.logo};
 
     @media (min-width: 420px) {
         font-size: 24px;
@@ -47,5 +47,5 @@ export const LogoStartSpan = styled.span`
 `;
 
 export const LogoEndSpan = styled(LogoStartSpan)`
-    color: var(--color-primary);
+    color: ${({ theme }) => theme.colors.main.black};
 `;

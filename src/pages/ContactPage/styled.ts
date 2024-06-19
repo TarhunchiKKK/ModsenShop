@@ -45,11 +45,10 @@ export const ContentWrapper = styled.div`
 `;
 
 export const Description = styled.p`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 16px;
     font-weight: 400;
     text-align: center;
-    color: var(--color-primary);
 
     width: 380px;
     display: none;

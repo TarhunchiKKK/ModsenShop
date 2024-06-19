@@ -13,18 +13,17 @@ export const Wrapper = styled.div`
     justify-content: start;
     align-items: start;
     gap: 24px;
-    background-color: var(--bg-color);
+    background-color: ${({ theme }) => theme.background};
 `;
 
 export const MenuOption = styled.span`
-    font-family: var(--font-primary);
+    font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 20px;
     font-weight: 400;
     line-height: 26px;
-    color: var(--color-primary);
     text-transform: uppercase;
 
     &:hover {
-        color: var(--color-logo);
+        color: ${({ theme }) => theme.colors.main.logo};
     }
 `;
