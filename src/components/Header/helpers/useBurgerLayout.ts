@@ -6,16 +6,16 @@ export function useBurgerLayout() {
     const [isBurgerVisible, setIsBurgerVisible] = useState<boolean>(window.innerWidth <= size);
 
     useEffect(() => {
-        const callback = () => {
+        const resizeHandler = () => {
             const nextState: boolean = window.innerWidth <= size;
             if (nextState !== isBurgerVisible) {
-                setIsBurgerVisible(!isBurgerVisible);
+                setIsBurgerVisible(nextState);
             }
         };
 
-        window.addEventListener("resize", callback);
+        window.addEventListener("resize", resizeHandler);
 
-        return () => window.removeEventListener("resize", callback);
+        return () => window.removeEventListener("resize", resizeHandler);
     }, [isBurgerVisible]);
 
     return { isBurgerVisible };
