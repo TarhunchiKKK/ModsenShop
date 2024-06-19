@@ -45,7 +45,7 @@ export function Input({
 
             <ResetIcon src={ResetInputIcon} />
 
-            {errors[name] && <ErrorMessage>{errors[name].message}</ErrorMessage>}
+            {errors[name] && <ErrorMessage>{errors[name]!.message}</ErrorMessage>}
         </InputWrapper>
     );
 }
