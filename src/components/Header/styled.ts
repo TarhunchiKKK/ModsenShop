@@ -1,14 +1,15 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-    padding-top: 10px;
+    position: relative;
+    padding: 17px 6px 0px;
 
     @media (min-width: 768px) {
-        padding-top: 24px;
+        padding: 24px 0px 0px;
     }
 
     @media (min-width: 1024px) {
-        padding-top: 64px;
+        padding: 64px 0px 0px;
     }
 `;
 
@@ -48,41 +49,3 @@ export const LogoStartSpan = styled.span`
 export const LogoEndSpan = styled(LogoStartSpan)`
     color: var(--color-primary);
 `;
-
-export const HeaderOptionsWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 10px;
-
-    @media (min-width: 360px) {
-        gap: 20px;
-    }
-
-    @media (min-width: 540px) {
-        gap: 42px;
-    }
-`;
-
-export const ShopLinkSpan = styled.span`
-    font-family: var(--font-primary);
-    font-size: 14px;
-    font-weight: 400;
-    margin-right: 0px;
-
-    @media (min-width: 420px) {
-        font-size: 16px;
-    }
-
-    @media (min-width: 1024px) {
-        margin-right: 62px;
-    }
-
-    &:hover {
-        transition: var(--transition-links);
-        color: var(--color-logo);
-    }
-`;
-
-export const ShopLink = styled.span``;

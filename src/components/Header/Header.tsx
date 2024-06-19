@@ -1,18 +1,13 @@
 import { Container } from "../Container";
-import { Switch } from "./Switch";
-import { IconThemeWrapper } from "../IconThemeWrapper";
-import { BasketIconDark, BasketIconLight, SearchIconDark, SearchIconLight } from "@/assets";
 import { Link } from "react-router-dom";
-import {
-    HeaderContentWrapper,
-    HeaderOptionsWrapper,
-    LogoEndSpan,
-    LogoStartSpan,
-    ShopLinkSpan,
-    StyledHeader
-} from "./styled";
+import { useBurgerLayout } from "./helpers";
+import { Search } from "./Search";
+import { HeaderContentWrapper, LogoEndSpan, LogoStartSpan, StyledHeader } from "./styled";
+import { HeaderOptions } from "./HeaderOptions";
 
-export function Header() {
+export const Header = () => {
+    const { isBurgerVisible } = useBurgerLayout();
+
     return (
         <StyledHeader>
             <Container>
@@ -21,25 +16,12 @@ export function Header() {
                         <LogoStartSpan>{"Modsen S"}</LogoStartSpan>
                         <LogoEndSpan>{"HOPPE"}</LogoEndSpan>
                     </Link>
-                    <HeaderOptionsWrapper>
-                        <Link to="/shop" style={{ color: "inherit" }}>
-                            <ShopLinkSpan>Shop</ShopLinkSpan>
-                        </Link>
 
-                        <Switch />
-
-                        <IconThemeWrapper>
-                            <img src={SearchIconDark} alt="Basket" />
-                            <img src={SearchIconLight} alt="Basket" />
-                        </IconThemeWrapper>
-
-                        <IconThemeWrapper>
-                            <img src={BasketIconDark} alt="Basket" />
-                            <img src={BasketIconLight} alt="Basket" />
-                        </IconThemeWrapper>
-                    </HeaderOptionsWrapper>
+                    <HeaderOptions />
                 </HeaderContentWrapper>
+
+                {isBurgerVisible && <Search />}
             </Container>
         </StyledHeader>
     );
-}
+};

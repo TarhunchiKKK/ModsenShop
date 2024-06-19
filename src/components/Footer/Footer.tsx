@@ -1,15 +1,13 @@
 import { Container } from "../Container";
 import { FooterForm } from "./FooterForm";
 import { FooterLink } from "./FooterLink";
-import { FooterIcon } from "./FooterIcon";
-import { LinkedInIcon, FacebookIcon, InstagramIcon, TwitterIcon } from "@/assets";
+import { FooterIcons } from "./FooterIcons";
 import {
     CopyrightGraySpan,
     CopyrightRegularSpan,
     FooterContentFirst,
     FooterContentSecond,
     FooterContentWrapper,
-    FooterIconsWrapper,
     FooterLinksWrapper,
     StyledFooter
 } from "./styled";
@@ -37,12 +35,7 @@ export function Footer() {
                             <CopyrightGraySpan>{"privacy policy."}</CopyrightGraySpan>
                         </div>
 
-                        <FooterIconsWrapper>
-                            <FooterIcon link="" icon={LinkedInIcon} />
-                            <FooterIcon link="" icon={FacebookIcon} />
-                            <FooterIcon link="" icon={InstagramIcon} />
-                            <FooterIcon link="" icon={TwitterIcon} />
-                        </FooterIconsWrapper>
+                        <FooterIcons />
                     </FooterContentSecond>
                 </FooterContentWrapper>
             </Container>

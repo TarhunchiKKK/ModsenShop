@@ -1,10 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import { themeSlice } from "./slices";
+import { burgerSlice, themeSlice } from "./slices";
 
 export const store = configureStore({
     reducer: {
-        [themeSlice.name]: themeSlice.reducer
+        [themeSlice.name]: themeSlice.reducer,
+        [burgerSlice.name]: burgerSlice.reducer
     },
     middleware: (getDefaultMiddleware) => getDefaultMiddleware()
 });

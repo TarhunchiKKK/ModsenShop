@@ -2,15 +2,19 @@ import { useAppSelector } from "@/store";
 import { THEMES } from "@/types";
 
 interface IIconWrapperProps {
-    children: [JSX.Element, JSX.Element];
+    srcLight: string;
+    srcDark: string;
+    alt: string;
+    onClick?: () => void;
 }
 
-export function IconThemeWrapper({ children }: IIconWrapperProps) {
+export function IconThemeWrapper({ srcLight, srcDark, ...other }: IIconWrapperProps) {
     const theme: THEMES = useAppSelector((state) => state.theme.theme);
     return (
-        <div style={{ cursor: "pointer" }}>
-            {theme === THEMES.LIGHT && children[0]}
-            {theme === THEMES.DARK && children[1]}
-        </div>
+        <img
+            src={theme === THEMES.LIGHT ? srcLight : srcDark}
+            style={{ cursor: "pointer" }}
+            {...other}
+        />
     );
 }

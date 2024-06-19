@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Button, ErrorMessage, Form, Input } from "./styled";
+import { Button, Checkbox, ErrorMessage, Form, Input, Label } from "./styled";
 import { ArrowLRightIcon } from "@/assets";
 import { sendNewsletter } from "@/utils";
 import { EMAIL_PATTERN } from "@/constants";
@@ -41,6 +41,11 @@ export function FooterForm() {
             <Button type="submit">
                 <img src={ArrowLRightIcon} alt="Submit" />
             </Button>
+
+            <Label>
+                <Checkbox type="checkbox" />
+                <span>i agree to the website’s terms and conditions</span>{" "}
+            </Label>
         </Form>
     );
 }

@@ -1,18 +1,25 @@
 import { FieldErrors, RegisterOptions, UseFormRegister } from "react-hook-form";
-import { ErrorMessage, InputWrapper, StyledInput } from "./styled";
+import { ErrorMessage, InputWrapper, ResetIcon, StyledInput } from "./styled";
 import { Inputs } from "../ContactPage";
 import { EMAIL_PATTERN } from "@/constants";
 import { capitalizeString } from "@/utils";
+import { ResetInputIcon } from "@/assets";
 
 interface IInputProps {
     placeholder: string;
-    padding?: string;
+    isMessageField?: boolean;
     name: "firstName" | "lastName" | "email" | "subject" | "message";
     register: UseFormRegister<Inputs>;
     errors: FieldErrors<Inputs>;
 }
 
-export function Input({ placeholder, padding = "12px", name, register, errors }: IInputProps) {
+export function Input({
+    placeholder,
+    name,
+    register,
+    errors,
+    isMessageField = false
+}: IInputProps) {
     const options: RegisterOptions<
         Inputs,
         "firstName" | "lastName" | "email" | "subject" | "message"
@@ -30,11 +37,13 @@ export function Input({ placeholder, padding = "12px", name, register, errors }:
     return (
         <InputWrapper>
             <StyledInput
-                style={{ paddingBottom: padding }}
                 type="text"
                 placeholder={placeholder}
+                $isMessage={isMessageField}
                 {...register(name, options)}
             />
+
+            <ResetIcon src={ResetInputIcon} />
 
             {errors[name] && <ErrorMessage>{errors[name].message}</ErrorMessage>}
         </InputWrapper>

@@ -14,20 +14,21 @@ export const ContentWrapper = styled.div`
 `;
 
 export const ContentText = styled.p`
-    margin-top: 24px;
-    margin-bottom: 64px;
+    margin-top: 10px;
+    margin-bottom: 24px;
     texp-aligh: center;
-    width: 275px;
+    width: 163px;
 
     font-family: var(--font-primary);
-
-    font-size: 20px;
+    font-size: 12px;
+    line-height: 20px;
     font-weight: 400;
     text-align: center;
     color: var(--color-secondary);
 
     @media (min-width: 440px) {
         font-size: 16px;
+        width: 275px;
     }
 
     @media (min-width: 540px) {
@@ -36,21 +37,30 @@ export const ContentText = styled.p`
 
     @media (min-width: 768px) {
         font-size: 20px;
+        margin-top: 24px;
+        margin-bottom: 64px;
     }
 `;
 
 export const Button = styled.button`
     font-family: var(--font-primary);
-    font-size: 16px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 400;
 
     background: none;
     border: 1px solid var(--color-primary);
+    border-radius: 4px;
     color: var(--color-primary);
     text-decoration: uppercase;
 
-    padding: 16px 49px;
+    padding: 6px 25px;
     cursor: pointer;
+
+    @media (min-width: 768px) {
+        padding: 16px 49px;
+        font-size: 16px;
+        font-weight: 700;
+    }
 
     &:hover {
         background: var(--color-logo);

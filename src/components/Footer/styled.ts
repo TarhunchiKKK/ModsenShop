@@ -1,18 +1,29 @@
 import styled from "styled-components";
 
-export const StyledFooter = styled.footer``;
+export const StyledFooter = styled.footer`
+    padding: 0px 16px 17px;
+
+    @media (min-width: 640px) {
+        padding: 0px 16px 32px;
+    }
+`;
 
 export const FooterContentWrapper = styled.div`
-    padding: 40px 0px 92px;
-    border-top: 1px solid #d8d8d8;
+    border-top: none;
+    padding-top: 0px;
+
+    @media (min-width: 500px) {
+        padding-top: 40px;
+        border-top: 1px solid #d8d8d8;
+    }
 `;
 
 export const FooterContentFirst = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: space-between;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
 
     @media (min-width: 768px) {
         flex-direction: row;
@@ -22,12 +33,15 @@ export const FooterContentFirst = styled.div`
 
 export const FooterLinksWrapper = styled.div`
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: start;
     width: 98%;
+    gap: 10px;
 
-    @media (min-width: 460px) {
+    @media (min-width: 500px) {
+        flex-direction: row;
+        align-items: center;
         gap: 40px;
         width: auto;
     }
@@ -45,12 +59,13 @@ export const FooterContentSecond = styled.div`
     display: flex;
     flex-direction: column-reverse;
     justify-content: space-between;
-    align-items: center;
-    margin-top: 30px;
-    gap: 18px;
+    align-items: start;
+    margin-top: 32px;
+    gap: 36px;
 
-    @media (min-width: 460px) {
+    @media (min-width: 500px) {
         flex-direction: row;
+        align-items: center;
         gap: 10px;
     }
 
@@ -61,13 +76,9 @@ export const FooterContentSecond = styled.div`
 
 export const CopyrightGraySpan = styled.span`
     font-family: var(--font-primary);
-    font-size: 14px;
+    font-size: 12px;
     font-weight: 400;
     color: var(--color-secondary);
-
-    @media (min-width: 360px) {
-        font-size: 16px;
-    }
 
     @media (min-width: 460px) {
         font-size: 14px;
@@ -79,21 +90,7 @@ export const CopyrightGraySpan = styled.span`
 `;
 
 export const CopyrightRegularSpan = styled(CopyrightGraySpan)`
-    color: var(--color-primary);
-`;
-
-export const FooterIconsWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    gap: 29.5px;
-
-    @media (min-width: 460px) {
-        gap: 24px;
-    }
-
-    @media (min-width: 540px) {
-        gap: 29.5px;
+    @media (min-width: 640px) {
+        color: var(--color-primary);
     }
 `;

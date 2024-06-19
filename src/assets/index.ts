@@ -7,6 +7,10 @@ import FacebookIcon from "./facebook.svg";
 import InstagramIcon from "./instagram.svg";
 import TwitterIcon from "./twitter.svg";
 import ArrowLRightIcon from "./arrow-right.svg";
+import ResetInputIcon from "./reset-input.svg";
+import BurgerIconLight from "./burger-light.svg";
+import BurgerIconDark from "./burger-dark.svg";
+import SearchIconGray from "./search-gray.svg";
 
 export {
     SearchIconDark,
@@ -17,5 +21,9 @@ export {
     FacebookIcon,
     InstagramIcon,
     TwitterIcon,
-    ArrowLRightIcon
+    ArrowLRightIcon,
+    ResetInputIcon,
+    BurgerIconLight,
+    BurgerIconDark,
+    SearchIconGray
 };

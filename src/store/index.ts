@@ -1,2 +1,2 @@
 export * from "./store";
-export { toggleTheme } from "./slices";
+export { toggleTheme, toggleBurger } from "./slices";

@@ -5,7 +5,7 @@ export const InputWrapper = styled.div`
     width: 100%;
 `;
 
-export const StyledInput = styled.input`
+export const StyledInput = styled.input<{ $isMessage: boolean }>`
     width: 100%;
 
     outline: none;
@@ -16,6 +16,16 @@ export const StyledInput = styled.input`
     font-family: var(--font-primary);
     font-size: 16px;
     color: var(--color-secondary);
+
+    padding-bottom: ${(props) => (props.$isMessage ? "65px" : "5px")};
+
+    @media (min-width: 640px) {
+        padding-bottom: ${(props) => (props.$isMessage ? "54px" : "8px")};
+    }
+
+    @media (min-width: 1024px) {
+        padding-bottom: ${(props) => (props.$isMessage ? "44px" : "12px")};
+    }
 `;
 
 export const ErrorMessage = styled.span`
@@ -27,4 +37,15 @@ export const ErrorMessage = styled.span`
     font-family: var(--font-primary);
     font-weight: 300;
     font-size: 14px;
+`;
+
+export const ResetIcon = styled.img`
+    position: absolute;
+    right: 0px;
+    bottom: 10px;
+    display: block;
+
+    @media (min-width: 640px) {
+        display: none;
+    }
 `;
