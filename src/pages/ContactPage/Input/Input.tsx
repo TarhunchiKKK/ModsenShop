@@ -4,6 +4,7 @@ import { Inputs } from "../ContactPage";
 import { EMAIL_PATTERN } from "@/constants";
 import { capitalizeString } from "@/utils";
 import { ResetInputIcon } from "@/assets";
+import { useState } from "react";
 
 interface IInputProps {
     placeholder: string;
@@ -20,6 +21,8 @@ export function Input({
     errors,
     isMessageField = false
 }: IInputProps) {
+    const [isActive, setIsActive] = useState<boolean>(false);
+
     const options: RegisterOptions<
         Inputs,
         "firstName" | "lastName" | "email" | "subject" | "message"
@@ -41,9 +44,11 @@ export function Input({
                 placeholder={placeholder}
                 $isMessage={isMessageField}
                 {...register(name, options)}
+                onFocus={() => setIsActive(true)}
+                onBlur={() => setIsActive(false)}
             />
 
-            <ResetIcon src={ResetInputIcon} />
+            {isActive && <ResetIcon src={ResetInputIcon} />}
 
             {errors[name] && <ErrorMessage>{errors[name]!.message}</ErrorMessage>}
         </InputWrapper>

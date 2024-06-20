@@ -1,5 +1,6 @@
 import { useAppSelector } from "@/store";
 import { THEMES } from "@/types";
+import { IconWrapper } from "./styled";
 
 interface IIconWrapperProps {
     srcLight: string;
@@ -11,10 +12,8 @@ interface IIconWrapperProps {
 export function IconThemeWrapper({ srcLight, srcDark, ...other }: IIconWrapperProps) {
     const theme: THEMES = useAppSelector((state) => state.theme.theme);
     return (
-        <img
-            src={theme === THEMES.LIGHT ? srcLight : srcDark}
-            style={{ cursor: "pointer" }}
-            {...other}
-        />
+        <IconWrapper>
+            <img src={theme === THEMES.LIGHT ? srcLight : srcDark} {...other} />
+        </IconWrapper>
     );
 }

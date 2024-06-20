@@ -17,6 +17,7 @@ export const Wrapper = styled.div`
 `;
 
 export const ShopLinkSpan = styled.span`
+    position: relative;
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 14px;
     font-weight: 400;
@@ -30,8 +31,15 @@ export const ShopLinkSpan = styled.span`
         margin-right: 62px;
     }
 
-    &:hover {
-        transition: ${({ theme }) => theme.transitions.links};
-        color: ${({ theme }) => theme.colors.main.logo};
+    &:active {
+        &::after {
+            content: "";
+            position: absolute;
+            top: calc(100% + 10px);
+            left: 0px;
+            width: 100%;
+            border: 2px solid ${({ theme }) => theme.colors.main.black};
+            transition: ${({ theme }) => theme.transitions.buttons};
+        }
     }
 `;

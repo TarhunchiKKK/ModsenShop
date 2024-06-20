@@ -1,4 +1,3 @@
-import { FacebookIcon, InstagramIcon, LinkedInIcon, TwitterIcon } from "@/assets";
 import { FollowSpan, FooterIconsWrapper, Icon, IconLink } from "./styled";
 
 export function FooterIcons() {
@@ -6,16 +5,16 @@ export function FooterIcons() {
         <FooterIconsWrapper>
             <FollowSpan>Follow us</FollowSpan>
             <IconLink href="" target="_blank">
-                <Icon src={LinkedInIcon} alt="LinkedIn" />
+                <Icon className="fa-brands fa-linkedin-in"></Icon>
             </IconLink>
             <IconLink href="" target="_blank">
-                <Icon src={FacebookIcon} alt="Facebook" />
+                <Icon className="fa-brands fa-facebook-f"></Icon>
             </IconLink>
             <IconLink href="" target="_blank">
-                <Icon src={InstagramIcon} alt="Instagram" />
+                <Icon className="fa-brands fa-instagram"></Icon>
             </IconLink>
             <IconLink href="" target="_blank">
-                <Icon src={TwitterIcon} alt="Twitter" />
+                <Icon className="fa-brands fa-twitter"></Icon>
             </IconLink>
         </FooterIconsWrapper>
     );

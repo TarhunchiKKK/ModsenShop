@@ -38,7 +38,7 @@ export function HeaderOptions() {
                 </>
             )}
 
-            <IconThemeWrapper srcLight={BasketIconDark} srcDark={BasketIconLight} alt="Baseket" />
+            <IconThemeWrapper srcLight={BasketIconDark} srcDark={BasketIconLight} alt="Basket" />
 
             {isBurgerVisible && (
                 <IconThemeWrapper

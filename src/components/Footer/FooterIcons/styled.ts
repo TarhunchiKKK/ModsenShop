@@ -47,14 +47,24 @@ export const IconLink = styled.a`
             display: inline;
         }
     }
+
+    &:hover {
+        fill: ${({ theme }) => theme.colors.main.black};
+        stroke: ${({ theme }) => theme.colors.main.white};
+    }
 `;
 
-export const Icon = styled.img`
+export const Icon = styled.i`
     width: 12px;
     height: 12px;
+    color: ${({ theme }) => theme.colors.neutral.darkGray};
 
     @media (min-width: 500px) {
         width: 18px;
         height: 18px;
+    }
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.main.black};
     }
 `;

@@ -49,7 +49,7 @@ export const Button = styled.button`
     font-weight: 700;
     text-transform: uppercase;
 
-    border: none;
+    border: 1px solid ${({ theme }) => theme.colors.main.black};
     border-radius: 4px;
     color: ${({ theme }) => theme.colors.main.white};
     background-color: ${({ theme }) => theme.colors.main.black};
@@ -64,5 +64,11 @@ export const Button = styled.button`
     @media (min-width: 768px) {
         margin-top: 112px;
         width: 500px;
+    }
+
+    &:hover {
+        color: ${({ theme }) => theme.colors.main.black};
+        background-color: ${({ theme }) => theme.colors.main.white};
+        transition: ${({ theme }) => theme.transitions.buttons};
     }
 `;

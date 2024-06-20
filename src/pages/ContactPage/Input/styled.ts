@@ -40,12 +40,13 @@ export const ErrorMessage = styled.span`
 `;
 
 export const ResetIcon = styled.img`
+    cursor: pointer;
     position: absolute;
     right: 0px;
     bottom: 10px;
     display: block;
 
-    @media (min-width: 640px) {
-        display: none;
-    }
+    // @media (min-width: 640px) {
+    //     display: none;
+    // }
 `;

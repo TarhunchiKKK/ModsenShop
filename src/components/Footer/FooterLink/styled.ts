@@ -18,6 +18,6 @@ export const FooterLinkSpan = styled.span`
 
     &:hover {
         transition: ${({ theme }) => theme.transitions.links};
-        color: ${({ theme }) => theme.colors.main.logo};
+        color: ${({ theme }) => theme.colors.main.black};
     }
 `;
