@@ -11,6 +11,7 @@ import {
     FooterLinksWrapper,
     StyledFooter
 } from "./styled";
+import { routes } from "@/constants";
 
 export function Footer() {
     return (
@@ -19,9 +20,9 @@ export function Footer() {
                 <FooterContentWrapper>
                     <FooterContentFirst>
                         <FooterLinksWrapper>
-                            <FooterLink content="Contact" link="/" />
-                            <FooterLink content="Terms of services" link="/" />
-                            <FooterLink content="Shipping and returns" link="/" />
+                            <FooterLink content="Contact" link={routes.contact} />
+                            <FooterLink content="Terms of services" link={routes.home} />
+                            <FooterLink content="Shipping and returns" link={routes.shop} />
                         </FooterLinksWrapper>
 
                         <FooterForm />

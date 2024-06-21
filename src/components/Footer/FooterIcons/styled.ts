@@ -8,10 +8,10 @@ export const FooterIconsWrapper = styled.div`
     gap: 29.5px;
 
     @media (min-width: 460px) {
-        gap: 24px;
+        gap: 20px;
     }
 
-    @media (min-width: 540px) {
+    @media (min-width: 768px) {
         gap: 29.5px;
     }
 `;

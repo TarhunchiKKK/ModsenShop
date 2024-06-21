@@ -24,6 +24,7 @@ export const MenuOption = styled.span`
     text-transform: uppercase;
 
     &:hover {
-        color: ${({ theme }) => theme.colors.main.logo};
+        color: ${({ theme }) => theme.colors.neutral.darkGray};
+        transition: ${({ theme }) => theme.transitions.links};
     }
 `;

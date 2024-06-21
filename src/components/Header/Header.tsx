@@ -1,9 +1,10 @@
-import { Container } from "../Container";
 import { Link } from "react-router-dom";
+import { Container } from "../Container";
 import { useBurgerLayout } from "./helpers";
 import { Search } from "./Search";
 import { HeaderContentWrapper, LogoEndSpan, LogoStartSpan, StyledHeader } from "./styled";
 import { HeaderOptions } from "./HeaderOptions";
+import { routes } from "@/constants";
 
 export const Header = () => {
     const { isBurgerVisible } = useBurgerLayout();
@@ -12,7 +13,7 @@ export const Header = () => {
         <StyledHeader>
             <Container>
                 <HeaderContentWrapper>
-                    <Link to="/">
+                    <Link to={routes.home}>
                         <LogoStartSpan>{"Modsen S"}</LogoStartSpan>
                         <LogoEndSpan>{"HOPPE"}</LogoEndSpan>
                     </Link>

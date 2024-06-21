@@ -14,17 +14,22 @@ import {
 import { Switch } from "../Switch";
 import { ShopLinkSpan, Wrapper } from "./styled";
 import { BurgerMenu } from "../BurgerMenu";
+import { routes } from "@/constants";
 
 export function HeaderOptions() {
     const dispatch = useDispatch();
     const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burger);
     const { isBurgerVisible } = useBurgerLayout();
 
+    const handleBurgerClick = () => {
+        dispatch(toggleBurger());
+    };
+
     return (
         <Wrapper>
             {!isBurgerVisible && (
                 <>
-                    <Link to="/shop" style={{ color: "inherit" }}>
+                    <Link to={routes.shop} style={{ color: "inherit" }}>
                         <ShopLinkSpan>Shop</ShopLinkSpan>
                     </Link>
 
@@ -45,7 +50,7 @@ export function HeaderOptions() {
                     srcLight={BurgerIconDark}
                     srcDark={BurgerIconLight}
                     alt="Burger"
-                    onClick={() => dispatch(toggleBurger())}
+                    onClick={handleBurgerClick}
                 />
             )}
 

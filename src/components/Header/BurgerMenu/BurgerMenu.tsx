@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
 import { MenuOption, Wrapper } from "./styled";
 import { getBurgerMenuHeight, useBurgerLayout } from "../helpers";
-
-const menuOptions: string[] = ["Home", "Shop", "About", "Blog", "Help", "Contact", "Search"];
+import { BurgerMenuOptions } from "../data";
 
 export function BurgerMenu() {
     const { isBurgerVisible } = useBurgerLayout();
@@ -11,9 +10,9 @@ export function BurgerMenu() {
         <>
             {isBurgerVisible && (
                 <Wrapper style={{ height: getBurgerMenuHeight() }}>
-                    {menuOptions.map((option, idx) => (
-                        <Link to="/" key={idx}>
-                            <MenuOption>{option}</MenuOption>
+                    {BurgerMenuOptions.map((option) => (
+                        <Link to={option.link} key={option.content} style={{ color: "inherit" }}>
+                            <MenuOption>{option.content}</MenuOption>
                         </Link>
                     ))}
                 </Wrapper>

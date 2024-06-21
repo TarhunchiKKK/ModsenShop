@@ -1,17 +1,17 @@
 import { FieldErrors, RegisterOptions, UseFormRegister } from "react-hook-form";
 import { ErrorMessage, InputWrapper, ResetIcon, StyledInput } from "./styled";
-import { Inputs } from "../ContactPage";
 import { EMAIL_PATTERN } from "@/constants";
 import { capitalizeString } from "@/utils";
 import { ResetInputIcon } from "@/assets";
 import { useState } from "react";
+import { ContactFormInputs } from "../types";
 
 interface IInputProps {
     placeholder: string;
     isMessageField?: boolean;
     name: "firstName" | "lastName" | "email" | "subject" | "message";
-    register: UseFormRegister<Inputs>;
-    errors: FieldErrors<Inputs>;
+    register: UseFormRegister<ContactFormInputs>;
+    errors: FieldErrors<ContactFormInputs>;
 }
 
 export function Input({
@@ -24,7 +24,7 @@ export function Input({
     const [isActive, setIsActive] = useState<boolean>(false);
 
     const options: RegisterOptions<
-        Inputs,
+        ContactFormInputs,
         "firstName" | "lastName" | "email" | "subject" | "message"
     > = {
         required: capitalizeString(`${name} is required`)
@@ -37,6 +37,14 @@ export function Input({
         };
     }
 
+    const handleInputFocus = () => {
+        setIsActive(true);
+    };
+
+    const handleInputBlur = () => {
+        setIsActive(false);
+    };
+
     return (
         <InputWrapper>
             <StyledInput
@@ -44,8 +52,8 @@ export function Input({
                 placeholder={placeholder}
                 $isMessage={isMessageField}
                 {...register(name, options)}
-                onFocus={() => setIsActive(true)}
-                onBlur={() => setIsActive(false)}
+                onFocus={handleInputFocus}
+                onBlur={handleInputBlur}
             />
 
             {isActive && <ResetIcon src={ResetInputIcon} />}

@@ -2,14 +2,7 @@ import { sendIdea } from "@/utils";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { Button, FirstInputsPairWrapper, SecondInputsPairWrapper, StyledForm } from "./styled";
 import { Input } from "../Input";
-
-export type Inputs = {
-    firstName: string;
-    lastName: string;
-    email: string;
-    subject: string;
-    message: string;
-};
+import { ContactFormInputs } from "../types";
 
 export function Form() {
     const {
@@ -17,9 +10,9 @@ export function Form() {
         handleSubmit,
         formState: { errors },
         reset
-    } = useForm<Inputs>();
+    } = useForm<ContactFormInputs>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
         console.log(data);
         sendIdea(data);
         reset();

@@ -2,14 +2,6 @@ import { Container, Title } from "@/components";
 import { Form } from "./Form";
 import { ContentWrapper, Description, Section, Wrapper } from "./styled";
 
-export type Inputs = {
-    firstName: string;
-    lastName: string;
-    email: string;
-    subject: string;
-    message: string;
-};
-
 export function ContactPage() {
     return (
         <Section>

@@ -3,10 +3,7 @@ import { Button, Checkbox, ErrorMessage, Form, Input, Label } from "./styled";
 import { ArrowLRightIcon } from "@/assets";
 import { sendNewsletter } from "@/utils";
 import { EMAIL_PATTERN } from "@/constants";
-
-type Inputs = {
-    email: string;
-};
+import { FooterFormInputs } from "../types";
 
 export function FooterForm() {
     const {
@@ -14,9 +11,9 @@ export function FooterForm() {
         handleSubmit,
         formState: { errors },
         reset
-    } = useForm<Inputs>();
+    } = useForm<FooterFormInputs>();
 
-    const onSubmit: SubmitHandler<Inputs> = (data) => {
+    const onSubmit: SubmitHandler<FooterFormInputs> = (data) => {
         console.log(data);
         sendNewsletter(data.email);
         reset();

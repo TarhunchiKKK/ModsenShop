@@ -1,25 +1,19 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ContactPage, ErrorPage, Layout } from "@/pages";
-import { Footer, Header } from "@/components";
+import { routes } from "./routes";
 
 export const router = createBrowserRouter([
     {
-        path: "/",
+        path: routes.home,
         element: <Layout />,
-        errorElement: (
-            <>
-                <Header />
-                <ErrorPage />
-                <Footer />
-            </>
-        ),
+        errorElement: <ErrorPage />,
         children: [
             {
                 index: true,
                 element: <ContactPage />
             },
             {
-                path: "/contact",
+                path: routes.contact,
                 element: <ContactPage />
             }
         ]
