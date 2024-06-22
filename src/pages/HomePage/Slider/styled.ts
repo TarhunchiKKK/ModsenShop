@@ -1,21 +1,10 @@
 import { styled } from "styled-components";
 
-export const SliderContentWrapper = styled.div`
+export const SliderWrapper = styled.div`
     width: 100%;
     height: 354px;
     border-radius: 8px;
-    overflow-y: hidden;
-    overflow-x: auto;
-
-    display: flex;
-
-    &::-webkit-scrollbar {
-        width: 0;
-        display: none;
-    }
-`;
-
-export const SliderWrapper = styled.div`
+    overflow: hidden;
     position: relative;
 `;
 
@@ -49,10 +38,14 @@ export const CurretnDot = styled.li`
     cursor: pointer;
 `;
 
-export const ImageWrapper = styled.div`
+export const ImageWrapper = styled.div<{ index: number; currentIndex: number }>`
+    position: absolute;
+    top: 0px;
+    left: ${({ index, currentIndex }) => `${(index - currentIndex) * 100}%`};
+
     min-width: 100%;
     height: 100%;
-    position: relative;
+    transition: left 0.5s ease-in-out;
 `;
 
 export const Image = styled.img`
