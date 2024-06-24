@@ -1,7 +1,8 @@
 import { IProduct } from "@/types";
-import { ImageWrapper, SliderWrapper, Image, DotsWrapper, Dot, CurretnDot } from "./styled";
+import { SliderWrapper, DotsWrapper, Dot, CurretnDot } from "./styled";
 import { useEffect, useState } from "react";
 import { CHANGE_SLIDE_DELAY } from "../constants";
+import { Slide } from "./Slide";
 
 interface ISliderProps {
     products: IProduct[];
@@ -25,9 +26,7 @@ export function Slider({ products }: ISliderProps) {
     return (
         <SliderWrapper>
             {products.map((product, idx) => (
-                <ImageWrapper key={product.id} index={idx} currentIndex={currentSlide}>
-                    <Image src={product.image} alt={product.title} />
-                </ImageWrapper>
+                <Slide key={product.id} product={product} index={idx} currentSlide={currentSlide} />
             ))}
 
             <DotsWrapper>
