@@ -7,6 +7,8 @@ import ResetInputIcon from "./reset-input.svg";
 import BurgerIconLight from "./burger-light.svg";
 import BurgerIconDark from "./burger-dark.svg";
 import SearchIconGray from "./search-gray.svg";
+import CrossIconDark from "./cross-dark.svg";
+import CrossIconLight from "./cross-light.svg";
 
 export {
     SearchIconDark,
@@ -17,5 +19,7 @@ export {
     ResetInputIcon,
     BurgerIconLight,
     BurgerIconDark,
-    SearchIconGray
+    SearchIconGray,
+    CrossIconDark,
+    CrossIconLight,
 };

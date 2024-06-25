@@ -8,8 +8,10 @@ import {
     BasketIconLight,
     BurgerIconDark,
     BurgerIconLight,
+    CrossIconDark,
+    CrossIconLight,
     SearchIconDark,
-    SearchIconLight
+    SearchIconLight,
 } from "@/assets";
 import { Switch } from "../Switch";
 import { ShopLinkSpan, Wrapper } from "./styled";
@@ -47,8 +49,8 @@ export function HeaderOptions() {
 
             {isBurgerVisible && (
                 <IconThemeWrapper
-                    srcLight={BurgerIconDark}
-                    srcDark={BurgerIconLight}
+                    srcLight={isBurgerOpen ? CrossIconDark : BurgerIconDark}
+                    srcDark={isBurgerOpen ? CrossIconLight : BurgerIconLight}
                     alt="Burger"
                     onClick={handleBurgerClick}
                 />

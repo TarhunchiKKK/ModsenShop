@@ -1,1 +1,1 @@
-export { GetProductsOptions } from "./GetProductsOptions";
+export type { GetProductsOptions } from "./GetProductsOptions";
