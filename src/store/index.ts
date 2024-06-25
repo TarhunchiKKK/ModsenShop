@@ -1,3 +1,3 @@
 export * from "./store";
 export { toggleTheme, toggleBurger } from "./slices";
-export { useGetSliderImagesQuery } from "./api";
+export { useGetSliderImagesQuery, useGetProductsQuery } from "./api";

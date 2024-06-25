@@ -150,4 +150,9 @@ export const Button = styled.button`
 
     text-transform: capitalize;
     cursor: pointer;
+    &:hover {
+        color: ${({ theme }) => theme.colors.main.black};
+        border-color: ${({ theme }) => theme.colors.main.black};
+        transition: ${({ theme }) => theme.transitions.buttons};
+    }
 `;
