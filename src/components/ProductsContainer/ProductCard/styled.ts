@@ -8,6 +8,7 @@ export const CardWrapper = styled.div`
 `;
 
 export const ImageWrapper = styled.div`
+    position: relative;
     width: 100%;
     height: ${({ theme }) => theme.productImageSize[320]};
     margin-bottom: 6px;
@@ -78,5 +79,47 @@ export const ProductPrice = styled.span`
     @media (min-width: 1280px) {
         font-size: 20px;
         line-height: 26px;
+    }
+`;
+
+export const ShadowDiv = styled.div`
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    opacity: 0;
+    background: none;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+
+    cursor: pointer;
+    &:hover {
+        opacity: 100;
+        transition: 0.7s;
+    }
+`;
+
+export const ShadowLinkWrapper = styled.div`
+    background: #ffffff80;
+    padding: 11.32px 0px;
+    text-align: center;
+`;
+
+export const ShadowLinkText = styled.span`
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-size: 8.23px;
+    font-weight: 700;
+    line-height: 10.72px;
+    color: ${({ theme }) => theme.colors.main.black};
+    text-transform: uppercase;
+
+    &:hover,
+    &:active {
+        color: ${({ theme }) => theme.colors.main.white};
+        transition: ${({ theme }) => theme.transitions.links};
     }
 `;

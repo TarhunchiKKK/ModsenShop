@@ -1,1 +1,0 @@
-export { useProductCardSize } from "./useProductCardSize";

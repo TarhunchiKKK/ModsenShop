@@ -1,7 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import { ContactPage, ErrorPage, Layout } from "@/pages";
-import { routes } from "./routes";
 import { HomePage } from "@/pages/HomePage";
+import { routes } from "./routes";
 
 export const router = createBrowserRouter([
     {
@@ -11,12 +11,12 @@ export const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <HomePage />
+                element: <HomePage />,
             },
             {
                 path: routes.contact,
-                element: <ContactPage />
-            }
-        ]
-    }
+                element: <ContactPage />,
+            },
+        ],
+    },
 ]);
