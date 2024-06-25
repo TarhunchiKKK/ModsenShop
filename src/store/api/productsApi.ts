@@ -10,14 +10,6 @@ export const productsApi = createApi({
     }),
 
     endpoints: (builder) => ({
-        getSliderImages: builder.query<IProduct[], void>({
-            query: () => ({
-                url: "",
-                params: {
-                    limit: 5,
-                },
-            }),
-        }),
         getProducts: builder.query<IProduct[], GetProductsOptions>({
             query: (options: GetProductsOptions) => ({
                 url: "",
@@ -29,4 +21,4 @@ export const productsApi = createApi({
     }),
 });
 
-export const { useGetSliderImagesQuery, useGetProductsQuery } = productsApi;
+export const { useGetProductsQuery } = productsApi;

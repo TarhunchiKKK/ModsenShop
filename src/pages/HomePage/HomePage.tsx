@@ -1,4 +1,4 @@
-import { useGetProductsQuery, useGetSliderImagesQuery } from "@/store";
+import { useGetProductsQuery } from "@/store";
 import { Slider } from "./Slider";
 import { Container, Title } from "@/components";
 import {
@@ -8,13 +8,13 @@ import {
     SecondSectionTitleWrapper,
     ViewAllSpan,
 } from "./styled";
-import { HOME_PAGE_PRODUCTS_LIMIT } from "./constants";
+import { HOME_PAGE_PRODUCTS_LIMIT, SLIDES_COUNT } from "./constants";
 import { ProductsContainer } from "@/components";
 import { Link } from "react-router-dom";
 import { FULL_SCREEN_CARD_SCALING_FACTOR, routes } from "@/constants";
 
 export function HomePage() {
-    const { data: sliderProducts } = useGetSliderImagesQuery();
+    const { data: sliderProducts } = useGetProductsQuery({ limit: SLIDES_COUNT });
     const { data: products } = useGetProductsQuery({ limit: HOME_PAGE_PRODUCTS_LIMIT });
 
     return (

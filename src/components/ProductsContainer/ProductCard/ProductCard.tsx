@@ -41,7 +41,7 @@ export function ProductCard({ product }: IProductCardProps) {
 
             <ProductTitle>{product.title}</ProductTitle>
 
-            <ProductPrice>{product.price}</ProductPrice>
+            <ProductPrice>{`$ ${product.price}`}</ProductPrice>
         </CardWrapper>
     );
 }
