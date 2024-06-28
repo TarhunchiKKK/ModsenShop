@@ -1,10 +1,6 @@
 import { Link } from "react-router-dom";
 import { FooterLinkSpan } from "./styled";
-
-interface IFooterLinkProps {
-    content: string;
-    link: string;
-}
+import { IFooterLinkProps } from "./props";
 
 export function FooterLink({ content, link }: IFooterLinkProps) {
     return (

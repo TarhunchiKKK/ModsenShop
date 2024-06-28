@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { routes } from "@/constants";
-import { IProduct } from "@/types";
+import { IProductCardProps } from "./props";
 import {
     CardWrapper,
     ImageWrapper,
@@ -11,10 +11,6 @@ import {
     ShadowDiv,
     ShadowLinkText,
 } from "./styled";
-
-interface IProductCardProps {
-    product: IProduct;
-}
 
 export function ProductCard({ product }: IProductCardProps) {
     const navigate = useNavigate();

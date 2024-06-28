@@ -1,25 +1,18 @@
-import { FieldErrors, RegisterOptions, UseFormRegister } from "react-hook-form";
+import { RegisterOptions } from "react-hook-form";
 import { ErrorMessage, InputWrapper, ResetIcon, StyledInput } from "./styled";
 import { EMAIL_PATTERN } from "@/constants";
 import { capitalizeString } from "@/utils";
 import { ResetInputIcon } from "@/assets";
 import { useState } from "react";
 import { ContactFormInputs } from "../types";
-
-interface IInputProps {
-    placeholder: string;
-    isMessageField?: boolean;
-    name: "firstName" | "lastName" | "email" | "subject" | "message";
-    register: UseFormRegister<ContactFormInputs>;
-    errors: FieldErrors<ContactFormInputs>;
-}
+import { IInputProps } from "./props";
 
 export function Input({
     placeholder,
     name,
     register,
     errors,
-    isMessageField = false
+    isMessageField = false,
 }: IInputProps) {
     const [isActive, setIsActive] = useState<boolean>(false);
 
@@ -27,13 +20,13 @@ export function Input({
         ContactFormInputs,
         "firstName" | "lastName" | "email" | "subject" | "message"
     > = {
-        required: capitalizeString(`${name} is required`)
+        required: capitalizeString(`${name} is required`),
     };
 
     if (name === "email") {
         options.pattern = {
             value: EMAIL_PATTERN,
-            message: "Enter valid email"
+            message: "Enter valid email",
         };
     }
 

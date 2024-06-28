@@ -1,11 +1,6 @@
-import { IProduct } from "@/types";
 import { Wrapper } from "./styled";
 import { ProductCard } from "./ProductCard";
-
-interface IProductsContainerProps {
-    products: IProduct[];
-    scalingKoefficient: number;
-}
+import { IProductsContainerProps } from "./props";
 
 export function ProductsContainer({ products, scalingKoefficient }: IProductsContainerProps) {
     return (

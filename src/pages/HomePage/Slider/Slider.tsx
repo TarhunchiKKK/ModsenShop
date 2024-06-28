@@ -1,12 +1,8 @@
-import { IProduct } from "@/types";
-import { SliderWrapper, DotsWrapper, Dot, CurretnDot } from "./styled";
 import { useEffect, useState } from "react";
-import { CHANGE_SLIDE_DELAY } from "../constants";
 import { Slide } from "./Slide";
-
-interface ISliderProps {
-    products: IProduct[];
-}
+import { ISliderProps } from "./props";
+import { SliderWrapper, DotsWrapper, Dot, CurretnDot } from "./styled";
+import { CHANGE_SLIDE_DELAY } from "../constants";
 
 export function Slider({ products }: ISliderProps) {
     const [currentSlide, setCurrentSlide] = useState<number>(0);

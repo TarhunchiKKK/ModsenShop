@@ -1,18 +1,12 @@
-import { IProduct } from "@/types";
+import { ISlideProps } from "./props";
 import {
     ImageWrapper,
     Image,
     ProductInfoWrapper,
     ProductTitle,
     ProductPrice,
-    Button
+    Button,
 } from "./styled";
-
-interface ISlideProps {
-    product: IProduct;
-    index: number;
-    currentSlide: number;
-}
 
 export function Slide({ product, index, currentSlide }: ISlideProps) {
     return (
