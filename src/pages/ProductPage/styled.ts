@@ -5,6 +5,7 @@ export const Section = styled.section`
 `;
 
 export const InfoWrapper = styled.div`
+    height: 600px;
     display: flex;
     justify-content: space-between;
     align-items: center;

@@ -3,7 +3,7 @@ import { SocialNetwork } from "@/types";
 export const SocialNetworks: SocialNetwork[] = [
     {
         href: "https://www.linkedin.com/company/modsen/posts/?feedView=all",
-        iconClassName: "fa-brands fa-linkedin-in",
+        iconClassName: "fa-light fa-envelope",
     },
     {
         href: "https://www.facebook.com/ModsenSoftware",

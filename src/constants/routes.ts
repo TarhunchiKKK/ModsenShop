@@ -3,4 +3,5 @@ export const routes = {
     shop: "/shop",
     product: "/shop",
     contact: "/contact",
+    error: "/error",
 };
