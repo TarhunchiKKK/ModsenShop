@@ -1,21 +1,32 @@
-import { SocialNetworks } from "../constants";
+import { SocialNetworks, Stars } from "../constants";
+import { getBackgroundSize } from "../helpers";
 import { IProductInfoProps } from "./props";
 import * as Styled from "./styled";
 
 export function ProductInfo({ product }: IProductInfoProps) {
     return (
         <Styled.Wrapper>
-            <Styled.ProductTitle>{product.title}</Styled.ProductTitle>
+            <Styled.MainInfo>
+                <Styled.ProductTitle>{product.title}</Styled.ProductTitle>
 
-            <Styled.ProductPrice>{`$ ${product.price}`}</Styled.ProductPrice>
+                <Styled.ProductPrice>{`$ ${product.price}`}</Styled.ProductPrice>
 
-            <Styled.RatingWrapper>
-                <Styled.StarsWrapper></Styled.StarsWrapper>
+                <Styled.RatingWrapper>
+                    <Styled.StarsWrapper>
+                        {Stars.map((className, idx) => (
+                            <Styled.Star
+                                key={idx}
+                                $percent={getBackgroundSize(idx, product.rating.rate)}
+                                className={className}
+                            />
+                        ))}
+                    </Styled.StarsWrapper>
 
-                <Styled.ReviewSpan>{`${product.rating.count} customer review`}</Styled.ReviewSpan>
-            </Styled.RatingWrapper>
+                    <Styled.ReviewSpan>{`${product.rating.count} customer review`}</Styled.ReviewSpan>
+                </Styled.RatingWrapper>
 
-            <Styled.Description>{product.description}</Styled.Description>
+                <Styled.Description>{product.description}</Styled.Description>
+            </Styled.MainInfo>
 
             <Styled.ProductInfoFooter>
                 <Styled.LinksWrapper>

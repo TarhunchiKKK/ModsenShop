@@ -8,8 +8,8 @@ export const InfoWrapper = styled.div`
     height: 600px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding-bottom: 123px;
+    gap: 64px;
+    margin-bottom: 123px;
 `;
 
 export const ProductContainerWrapper = styled.div``;

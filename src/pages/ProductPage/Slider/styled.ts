@@ -19,20 +19,26 @@ export const ImagesColumn = styled.div`
 
 export const ColumnImageWrapper = styled.div<{ $isActive: boolean }>`
     width: 120px;
-    height: i20px;
+    height: 120px;
+    overflow: hidden;
     border: ${(props) =>
-        props.$isActive ? `1px solid ${props.theme.colors.neutral.lightGray}` : "none"};
+        props.$isActive ? `2px solid ${props.theme.colors.neutral.darkGray}` : "none"};
     border-radius: 8px;
 
     cursor: pointer;
     &:hover {
-        border: ${({ theme }) => theme.colors.neutral.lightGray};
+        border: 2px solid
+            ${(props) =>
+                props.$isActive
+                    ? props.theme.colors.neutral.darkGray
+                    : props.theme.colors.neutral.gray};
     }
 `;
 
 export const CurrentImageWrapper = styled.div`
     width: 540px;
-    height: 600px;
+    height: 100%;
+    overflow: hidden;
     border-radius: 8px;
 `;
 

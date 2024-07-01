@@ -11,8 +11,8 @@ export const WrapperTitle = styled.h2`
     line-height: 26px;
     text-transform: capitalize;
 
-    padding-bottom: 34px;
     border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.gray};
+    padding-bottom: 34px;
 
     margin-bottom: 39px;
     position: relative;
@@ -22,6 +22,7 @@ export const WrapperTitle = styled.h2`
         position: absolute;
         left: 0px;
         bottom: 0px;
+        width: 107px;
         border: 1px solid ${({ theme }) => theme.colors.main.black};
     }
 `;
