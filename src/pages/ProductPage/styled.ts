@@ -35,13 +35,55 @@ export const InfoWrapper = styled.div`
     }
 `;
 
-export const ProductContainerWrapper = styled.div``;
+export const ProductContainerWrapper = styled.div`
+    width: 136px;
+    margin: auto;
+    padding-bottom: 69px;
+
+    @media (min-width: 540px) {
+        width: 100%;
+        padding-bottom: 140px;
+    }
+
+    @media (min-width: 1024px) {
+        padding-bottom: 250px;
+    }
+`;
 
 export const ProductContainerTittle = styled.h2`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 26px;
+    font-size: 16px;
     font-weight: 400;
-    line-height: 35px;
+    line-height: 27px;
+
     text-transform: capitalize;
     margin-bottom: 47px;
+
+    @media (min-width: 640px) {
+        font-size: 26px;
+        line-height: 35px;
+    }
+`;
+
+export const ContinueShoppingWrapper = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 44px;
+
+    @media (min-width: 440px) {
+        display: none;
+    }
+`;
+
+export const ContinueShoppingSpan = styled.span`
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+    color: ${({ theme }) => theme.colors.main.logo};
+`;
+
+export const AngleWrapper = styled.div`
+    transform: rotate(180deg);
 `;
