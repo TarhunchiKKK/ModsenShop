@@ -5,6 +5,36 @@ export const CardWrapper = styled.div`
     flex-direction: column;
     justify-content: start;
     align-items: start;
+    width: ${({ theme }) => theme.productImageSize[320]};
+
+    @media (min-width: 440px) {
+        width: ${({ theme }) => theme.productImageSize[440]};
+    }
+
+    @media (min-width: 640px) {
+        width: ${({ theme }) => theme.productImageSize[640]};
+    }
+
+    @media (min-width: 768px) {
+        width: ${({ theme }) => theme.productImageSize[768]};
+    }
+
+    @media (min-width: 1024px) {
+        width: ${({ theme }) => theme.productImageSize[1024]};
+    }
+
+    @media (min-width: 1280px) {
+        width: ${({ theme }) => theme.productImageSize[1280]};
+    }
+
+    @media (min-width: 1440px) {
+        width: ${({ theme }) => theme.productImageSize[1440]};
+    }
+
+    margin-bottom: 32px;
+    &:last-child {
+        margin-bottom: 0px;
+    }
 `;
 
 export const ImageWrapper = styled.div`
@@ -12,6 +42,8 @@ export const ImageWrapper = styled.div`
     width: 100%;
     height: ${({ theme }) => theme.productImageSize[320]};
     margin-bottom: 6px;
+    border-radius: 8px;
+    overflow: hidden;
 
     @media (min-width: 440px) {
         height: ${({ theme }) => theme.productImageSize[440]};
@@ -41,7 +73,7 @@ export const ImageWrapper = styled.div`
 export const Image = styled.img`
     width: 100%;
     height: 100%;
-    object-position: 100%;
+    object-position: center;
     object-fit: cover;
 `;
 

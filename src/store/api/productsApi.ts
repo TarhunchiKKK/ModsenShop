@@ -18,7 +18,18 @@ export const productsApi = createApi({
                 },
             }),
         }),
+        getProductById: builder.query<IProduct, string | number>({
+            query: (id: string | number) => ({
+                url: `/${id}`,
+            }),
+        }),
+        getProductsByCategory: builder.query<IProduct[], string>({
+            query: (category: string) => ({
+                url: `/category/${category}`,
+            }),
+        }),
     }),
 });
 
-export const { useGetProductsQuery } = productsApi;
+export const { useGetProductsQuery, useGetProductByIdQuery, useGetProductsByCategoryQuery } =
+    productsApi;

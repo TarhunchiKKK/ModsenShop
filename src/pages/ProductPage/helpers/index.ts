@@ -1,0 +1,1 @@
+export { getBackgroundSize } from "./getbackgroundSize";
