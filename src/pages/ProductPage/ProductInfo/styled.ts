@@ -7,32 +7,57 @@ export const Wrapper = styled.div`
     justify-content: space-between;
 `;
 
-export const MainInfo = styled.div``;
+export const MainInfo = styled.div`
+    margin-bottom: 30px;
+    @media (min-width: 768px) {
+        margin-bottom: 0px;
+    }
+`;
 
 export const ProductTitle = styled.h1`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 26px;
+    font-size: 20px;
     font-weight: 400;
-    line-height: 35px;
-    margin-bottom: 23px;
+    line-height: 26px;
+
+    margin-bottom: 5px;
+
+    @media (min-width: 640px) {
+        font-size: 26px;
+        line-height: 35px;
+        margin-bottom: 23px;
+    }
 `;
 
 export const ProductPrice = styled.span`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 20px;
+    font-size: 17px;
     font-weight: 500;
-    line-height: 26px;
+    line-height: 27px;
     color: ${({ theme }) => theme.colors.main.logo};
     display: block;
-    margin-bottom: 64px;
+    margin-bottom: 24px;
+
+    @media (min-width: 640px) {
+        font-size: 20px;
+        line-height: 26px;
+        margin-bottom: 64px;
+    }
 `;
 
 export const RatingWrapper = styled.div`
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: start;
-    gap: 24px;
+    align-items: start;
+    gap: 12px;
     margin-bottom: 19px;
+
+    @media (min-width: 1024px) {
+        flex-direction: row;
+        align-items: center;
+        gap: 24px;
+    }
 `;
 
 export const StarsWrapper = styled.div`
@@ -47,7 +72,6 @@ export const Star = styled.i<{ $percent: number }>`
     overflow: hidden;
 
     &::before {
-        // content: "\f005";
         overflow: hidden;
         // background-color: ${({ theme }) => theme.colors.main.black};
         // background-size: ${(props) => props.$percent}%;
@@ -56,18 +80,38 @@ export const Star = styled.i<{ $percent: number }>`
 
 export const ReviewSpan = styled.span`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 20px;
     color: ${({ theme }) => theme.colors.neutral.darkGray};
+
+    @media (min-width: 640px) {
+        font-size: 16px;
+        line-height: 27px;
+    }
 `;
 
 export const Description = styled.p`
     font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 16px;
+    font-size: 12px;
     font-weight: 400;
-    line-height: 27px;
+    line-height: 20px;
     color: ${({ theme }) => theme.colors.neutral.darkGray};
+
+    @media (min-width: 640px) {
+        font-size: 16px;
+        line-height: 27px;
+    }
+`;
+
+export const ViewMoreButton = styled.span<{ $isOpen: boolean }>`
+    font-family: ${({ theme }) => theme.fonts.primary};
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 20px;
+
+    margin-top: 6px;
+    color: ${({ theme }) => theme.colors.main.logo};
 `;
 
 export const ProductInfoFooter = styled.div``;
@@ -77,11 +121,19 @@ export const LinksWrapper = styled.div`
     align-items: center;
     justify-content: start;
     gap: 24px;
-    margin-bottom: 64px;
+    margin-bottom: 18px;
+
+    @media (min-width: 1024px) {
+        margin-bottom: 64px;
+    }
 `;
 
 export const NetworkLink = styled.a`
-    font-size: 18px;
+    font-size: 12px;
+
+    @media (min-width: 640px) {
+        font-size: 18px;
+    }
 `;
 
 export const NetworkLinkIcon = styled.i`

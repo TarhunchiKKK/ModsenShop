@@ -9,6 +9,8 @@ import BurgerIconDark from "./burger-dark.svg";
 import SearchIconGray from "./search-gray.svg";
 import CrossIconDark from "./cross-dark.svg";
 import CrossIconLight from "./cross-light.svg";
+import AngleIconLight from "./angle-light.svg";
+import AngleIconDark from "./angle-dark.svg";
 
 export {
     SearchIconDark,
@@ -22,4 +24,6 @@ export {
     SearchIconGray,
     CrossIconDark,
     CrossIconLight,
+    AngleIconLight,
+    AngleIconDark,
 };

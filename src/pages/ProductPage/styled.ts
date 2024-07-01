@@ -1,15 +1,38 @@
 import { styled } from "styled-components";
 
 export const Section = styled.section`
-    padding: 128px 0px 250px;
+    padding: 10px 16px 0px;
+
+    @media (min-width: 640px) {
+        padding: 70px 16px 90px;
+    }
+
+    @media (min-width: 1024px) {
+        padding: 128px 0px 250px;
+    }
 `;
 
 export const InfoWrapper = styled.div`
-    height: 600px;
+    height: auto;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    gap: 64px;
-    margin-bottom: 123px;
+    gap: 40px;
+    margin-bottom: 18px;
+
+    @media (min-width: 640px) {
+        margin-bottom: 60px;
+    }
+
+    @media (min-width: 768px) {
+        height: 600px;
+        flex-direction: row;
+        gap: 64px;
+    }
+
+    @media (min-width: 1024px) {
+        margin-bottom: 123px;
+    }
 `;
 
 export const ProductContainerWrapper = styled.div``;

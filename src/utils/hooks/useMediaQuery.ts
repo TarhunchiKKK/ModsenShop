@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { useEventListener } from "./useEventListener";
 
-export function useMediaQuery(mediaQuery: string): boolean {
+export function useMediaQuery(mediaQuery: string) {
     const [isMatch, setIsMatch] = useState<boolean>(false);
-    const [mediaQueryList, setMediaQueryList] = useState<MediaQueryList>({} as MediaQueryList);
+    const [mediaQueryList, setMediaQueryList] = useState<MediaQueryList | null>(null);
 
     useEffect(() => {
         const list: MediaQueryList = window.matchMedia(mediaQuery);
+
+        console.log(list);
 
         setMediaQueryList(list);
 
@@ -15,5 +17,5 @@ export function useMediaQuery(mediaQuery: string): boolean {
 
     useEventListener<MediaQueryListEvent>("change", (e) => setIsMatch(e.matches), mediaQueryList);
 
-    return isMatch;
+    return { isMatch };
 }

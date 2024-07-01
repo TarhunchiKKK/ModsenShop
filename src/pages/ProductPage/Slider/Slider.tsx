@@ -1,12 +1,27 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ISliderProps } from "./props";
 import { ColumnImageWrapper, ImagesColumn, Image, Wrapper, CurrentImageWrapper } from "./styled";
+import { PRODUCT_SLIDER_DELAY, PRODUCT_SLIDER_IMAGES_COUNT } from "../constants";
 
 export function Slider({ slides }: ISliderProps) {
     const [currentSlide, setCurrentSlide] = useState<number>(0);
 
+    useEffect(() => {
+        const intervalFunction = () => {
+            if (currentSlide === PRODUCT_SLIDER_IMAGES_COUNT - 1) {
+                setCurrentSlide(0);
+            } else {
+                setCurrentSlide((prev) => prev + 1);
+            }
+        };
+
+        const interval = setInterval(() => intervalFunction(), PRODUCT_SLIDER_DELAY);
+
+        return () => clearInterval(interval);
+    }, [currentSlide]);
+
     return (
-        <Wrapper>
+        <Wrapper $currentSlide={currentSlide}>
             <ImagesColumn>
                 {slides.map((slide, idx) => (
                     <ColumnImageWrapper
