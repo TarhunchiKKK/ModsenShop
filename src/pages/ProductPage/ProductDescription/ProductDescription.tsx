@@ -3,9 +3,12 @@ import { IProductDescriptionProps } from "./props";
 import { AngleWrapper, Description, TitleDiv, Wrapper, WrapperTitle } from "./styled";
 import { IconThemeWrapper } from "@/components";
 import { AngleIconDark, AngleIconLight } from "@/assets";
+import { useMediaQuery } from "@/utils";
+import { PRODUCT_DETAIL_BREAKPOINT } from "../constants";
 
 export function ProductDescription({ description }: IProductDescriptionProps) {
     const [isOpen, setIsOpen] = useState<boolean>(false);
+    const { isMatch: areDetailsVisible } = useMediaQuery(PRODUCT_DETAIL_BREAKPOINT);
 
     const handleOpen = () => setIsOpen((prev) => !prev);
 
@@ -19,7 +22,7 @@ export function ProductDescription({ description }: IProductDescriptionProps) {
                 </AngleWrapper>
             </TitleDiv>
 
-            {isOpen && <Description>{description}</Description>}
+            {(isOpen || areDetailsVisible) && <Description>{description}</Description>}
         </Wrapper>
     );
 }

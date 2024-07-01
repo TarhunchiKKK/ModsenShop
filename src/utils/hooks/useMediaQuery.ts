@@ -8,8 +8,6 @@ export function useMediaQuery(mediaQuery: string) {
     useEffect(() => {
         const list: MediaQueryList = window.matchMedia(mediaQuery);
 
-        console.log(list);
-
         setMediaQueryList(list);
 
         setIsMatch(list.matches);
