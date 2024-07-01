@@ -13,8 +13,8 @@ import {
 } from "./styled";
 
 export function HomePage() {
-    const { data: sliderProducts } = useGetProductsQuery({ limit: SLIDES_COUNT });
-    const { data: products } = useGetProductsQuery({ limit: HOME_PAGE_PRODUCTS_LIMIT });
+    const { data: sliderProducts } = useGetProductsQuery(SLIDES_COUNT);
+    const { data: products } = useGetProductsQuery(HOME_PAGE_PRODUCTS_LIMIT);
 
     return (
         <>

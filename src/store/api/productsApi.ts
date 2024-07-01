@@ -1,6 +1,5 @@
 import { IProduct } from "@/types";
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-import { GetProductsOptions } from "../types";
 
 export const productsApi = createApi({
     reducerPath: "products/api",
@@ -10,11 +9,11 @@ export const productsApi = createApi({
     }),
 
     endpoints: (builder) => ({
-        getProducts: builder.query<IProduct[], GetProductsOptions>({
-            query: (options: GetProductsOptions) => ({
+        getProducts: builder.query<IProduct[], number>({
+            query: (limit: number) => ({
                 url: "",
                 params: {
-                    ...options,
+                    limit,
                 },
             }),
         }),
