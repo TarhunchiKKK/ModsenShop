@@ -1,3 +1,3 @@
-export { THEMES } from "./Themes";
-export type { IProduct } from "./Product";
-export type { SocialNetwork } from "./SocialNetwork";
+export * from "./entities";
+export * from "./enums";
+export * from "./intrfaces";
