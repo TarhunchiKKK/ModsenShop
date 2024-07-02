@@ -1,6 +1,7 @@
-import { useCreateCartMutation, useGetCartQuery } from "./hooks";
+import { useCreateCartMutation, useGetCartsQuery, useRemoveCartMutation } from "./hooks";
 
 export const cartApi = {
-    useGetCartQuery,
+    useGetCartsQuery,
     useCreateCartMutation,
+    useRemoveCartMutation,
 };

@@ -11,16 +11,19 @@ import {
     ShadowDiv,
     ShadowLinkText,
 } from "./styled";
+import { cartApi } from "@/firebase";
 
 export function ProductCard({ product }: IProductCardProps) {
     const navigate = useNavigate();
+    const [createCart] = cartApi.useCreateCartMutation();
 
     const handleRedirect = () => {
         navigate(`${routes.product}/${product.id}`);
     };
 
-    const handleAddToCart = (e: React.MouseEvent<HTMLSpanElement>) => {
+    const handleAddToCart = async (e: React.MouseEvent<HTMLSpanElement>) => {
         e.stopPropagation();
+        await createCart(product);
     };
 
     return (

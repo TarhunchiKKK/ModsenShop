@@ -3,14 +3,17 @@ import { addDoc, collection } from "firebase/firestore";
 import { IProduct } from "@/types";
 import { CARTS_PATH } from "@/firebase/constants";
 import { FirebaseContext } from "../../FirebaseContext";
+import { useDispatch } from "react-redux";
+import { addProductToLocalStorage } from "@/store";
 
-export function useCreateCartMutation(product: IProduct) {
+export function useCreateCartMutation() {
+    const dispatch = useDispatch();
+
     const { database } = useContext(FirebaseContext);
 
-    const [cartId, setCartId] = useState<string | undefined>(undefined);
     const [isError, setIsError] = useState<boolean>(false);
 
-    async function createCart() {
+    async function createCart(product: IProduct) {
         try {
             setIsError(false);
 
@@ -20,13 +23,12 @@ export function useCreateCartMutation(product: IProduct) {
                 image: product.image,
             });
 
-            console.log(`Document written with id=${documentRef.id}`);
-            setCartId(documentRef.id);
+            dispatch(addProductToLocalStorage({ data: product, id: documentRef.id }));
         } catch (error: unknown) {
             setIsError(true);
             console.error("Error adding document: ", error);
         }
     }
 
-    return [createCart, { cartId, isError }];
+    return [createCart, { isError }] as const;
 }
