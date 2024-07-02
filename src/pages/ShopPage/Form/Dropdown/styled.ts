@@ -15,4 +15,9 @@ export const Select = styled.select`
     width: 100%;
     border: 1px solid ${({ theme }) => theme.colors.neutral.gray};
     border-radius: 4px;
+    outline: none;
+
+    color: ${({ theme }) => theme.colors.main.black};
+    background-color: ${({ theme }) => theme.colors.main.white};
+    cursor: pointer;
 `;

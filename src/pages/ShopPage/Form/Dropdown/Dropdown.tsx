@@ -1,5 +1,4 @@
 import { IDropdownProps } from "./props";
-import "./style.css";
 import { Select, Wrapper } from "./styled";
 
 export function Dropdown({ options, marginBottom, defaultValue }: IDropdownProps) {

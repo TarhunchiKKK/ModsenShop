@@ -1,23 +1,39 @@
+import { productsApi } from "@/store";
 import { Container, ProductsContainer, Title } from "@/components";
-import { ContentWrapper, FormWrapper, Section } from "./styled";
+import { FULL_SCREEN_CARD_SCALING_FACTOR, PART_SCREEN_CARD_SCALING_FACTOR } from "@/constants";
+import { CHANCGE_SCALING_BREAKPOINT, PRODUCTS_COUNT } from "./constants";
 import { Form } from "./Form";
-import { IProduct } from "@/types";
-import { FULL_SCREEN_CARD_SCALING_FACTOR } from "@/constants";
+import { ContentWrapper, FormWrapper, Section } from "./styled";
+import { getExtremePrices, useMediaQuery } from "@/utils";
 
 export function ShopPage() {
+    const { data: categories } = productsApi.useGetCategoriesQuery();
+    const { data: products } = productsApi.useGetProductsQuery(PRODUCTS_COUNT);
+
+    const { isMatch: isContainerOnFullScreen } = useMediaQuery(CHANCGE_SCALING_BREAKPOINT);
+
     return (
         <Section>
             <Container>
                 <Title content="Shop The Latest" />
+
                 <ContentWrapper>
                     <FormWrapper>
-                        <Form />
+                        {categories && products && (
+                            <Form categories={categories} {...getExtremePrices(products)} />
+                        )}
                     </FormWrapper>
 
-                    {/* <ProductsContainer
-                        products={[] as IProduct[]}
-                        scalingKoefficient={FULL_SCREEN_CARD_SCALING_FACTOR}
-                    /> */}
+                    {products && (
+                        <ProductsContainer
+                            products={products}
+                            scalingKoefficient={
+                                isContainerOnFullScreen
+                                    ? FULL_SCREEN_CARD_SCALING_FACTOR
+                                    : PART_SCREEN_CARD_SCALING_FACTOR
+                            }
+                        />
+                    )}
                 </ContentWrapper>
             </Container>
         </Section>

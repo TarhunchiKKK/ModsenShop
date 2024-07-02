@@ -60,15 +60,3 @@ export const RangeSpan = styled.span`
     line-height: 22px;
     color: ${({ theme }) => theme.colors.neutral.darkGray};
 `;
-
-export const SubmitButton = styled.button`
-    font-family: ${({ theme }) => theme.fonts.primary};
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 22px;
-    color: ${({ theme }) => theme.colors.main.logo};
-
-    background: none;
-    border: none;
-    cursor: pointer;
-`;

@@ -6,14 +6,20 @@ export const Wrapper = styled.div<{ $marginBottom: number }>`
 `;
 
 export const Input = styled.input`
-    width: 100%;
-    padding: 3px 0px 11px;
     font-family: ${({ theme }) => theme.fonts.primary};
     font-size: 14px;
     font-weight: 400;
     line-height: 22px;
+
+    width: 100%;
+    padding-bottom: 11px;
+
     color: ${({ theme }) => theme.colors.neutral.darkGray};
+    background: ${({ theme }) => theme.colors.main.white};
+
+    border: none;
     border-bottom: 1px solid ${({ theme }) => theme.colors.neutral.gray};
+    outline: none;
 `;
 
 export const IconWrapper = styled.div`

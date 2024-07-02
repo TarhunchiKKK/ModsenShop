@@ -1,14 +1,6 @@
 import { useState } from "react";
 import { IRangeProps } from "./props";
-import {
-    Progress,
-    RangeFooter,
-    RangeInput,
-    RangeInputsWrapper,
-    RangeSpan,
-    Slider,
-    SubmitButton,
-} from "./styled";
+import { Progress, RangeFooter, RangeInput, RangeInputsWrapper, RangeSpan, Slider } from "./styled";
 
 export function Range({ minValue, maxValue, step }: IRangeProps) {
     const [valueFrom, setValueFrom] = useState<number>(minValue);
@@ -54,8 +46,6 @@ export function Range({ minValue, maxValue, step }: IRangeProps) {
 
             <RangeFooter>
                 <RangeSpan>{`Price: $${valueFrom} - $${valueTo}`}</RangeSpan>
-
-                <SubmitButton>Filter</SubmitButton>
             </RangeFooter>
         </>
     );

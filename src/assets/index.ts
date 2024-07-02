@@ -11,6 +11,7 @@ import CrossIconDark from "./cross-dark.svg";
 import CrossIconLight from "./cross-light.svg";
 import AngleIconLight from "./angle-light.svg";
 import AngleIconDark from "./angle-dark.svg";
+import FiltersIcon from "./filters.svg";
 
 export {
     SearchIconDark,
@@ -26,4 +27,5 @@ export {
     CrossIconLight,
     AngleIconLight,
     AngleIconDark,
+    FiltersIcon,
 };
