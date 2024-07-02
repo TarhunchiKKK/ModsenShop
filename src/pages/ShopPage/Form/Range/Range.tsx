@@ -1,27 +1,25 @@
-import { useState } from "react";
 import { IRangeProps } from "./props";
 import { Progress, RangeFooter, RangeInput, RangeInputsWrapper, RangeSpan, Slider } from "./styled";
 
-export function Range({ minValue, maxValue, step }: IRangeProps) {
-    const [valueFrom, setValueFrom] = useState<number>(minValue);
-    const [valueTo, setValueTo] = useState<number>(maxValue);
-
+export function Range({ minValue, maxValue, step, value, onChange }: IRangeProps) {
     const handleChangeValueFrom = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
-        setValueFrom(Math.min(+e.target.value, valueTo - step));
+        const newMinValue = Math.min(+e.target.value, value.max - step);
+        onChange(newMinValue, value.max);
     };
 
     const handleChangeValueTo = (e: React.ChangeEvent<HTMLInputElement>) => {
         e.preventDefault();
-        setValueTo(Math.max(+e.target.value, valueFrom + step));
+        const newMaxValue = Math.max(+e.target.value, value.min + step);
+        onChange(value.min, newMaxValue);
     };
 
     return (
         <>
             <Slider>
                 <Progress
-                    $left={(valueFrom / maxValue) * 100}
-                    $right={100 - (valueTo / maxValue) * 100}
+                    $left={(value.min / maxValue) * 100}
+                    $right={100 - (value.max / maxValue) * 100}
                 ></Progress>
             </Slider>
 
@@ -31,7 +29,7 @@ export function Range({ minValue, maxValue, step }: IRangeProps) {
                     min={minValue}
                     max={maxValue}
                     step={step}
-                    value={valueFrom}
+                    value={value.min}
                     onChange={handleChangeValueFrom}
                 />
                 <RangeInput
@@ -39,13 +37,13 @@ export function Range({ minValue, maxValue, step }: IRangeProps) {
                     min={minValue}
                     max={maxValue}
                     step={step}
-                    value={valueTo}
+                    value={value.max}
                     onChange={handleChangeValueTo}
                 />
             </RangeInputsWrapper>
 
             <RangeFooter>
-                <RangeSpan>{`Price: $${valueFrom} - $${valueTo}`}</RangeSpan>
+                <RangeSpan>{`Price: $${value.min} - $${value.max}`}</RangeSpan>
             </RangeFooter>
         </>
     );

@@ -37,7 +37,11 @@ export const productFiltersSlice = createSlice({
             state.maxPrice = action.payload;
         },
         setFilters(state, action: PayloadAction<ProductFiltersState>) {
-            state = { ...action.payload };
+            state.title = action.payload.title;
+            state.category = action.payload.category;
+            state.sortOrder = action.payload.sortOrder;
+            state.minPrice = action.payload.minPrice;
+            state.maxPrice = action.payload.maxPrice;
         },
     },
 });

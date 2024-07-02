@@ -16,7 +16,7 @@ export const ContentWrapper = styled.div`
     margin-top: 39px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: start;
     align-items: start;
     gap: 36px;
 

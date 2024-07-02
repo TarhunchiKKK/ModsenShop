@@ -1,10 +1,10 @@
 import { IDropdownProps } from "./props";
 import { Select, Wrapper } from "./styled";
 
-export function Dropdown({ options, marginBottom, defaultValue }: IDropdownProps) {
+export function Dropdown({ options, value, onChange, marginBottom }: IDropdownProps) {
     return (
         <Wrapper $marginBottom={marginBottom}>
-            <Select defaultValue={defaultValue}>
+            <Select value={value} onChange={onChange}>
                 {options.map((option, idx) => (
                     <option key={idx} value={option.value}>
                         {option.label}
