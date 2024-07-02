@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { getSectionHeight } from "./helpers";
-import { Button, ContentText, ContentWrapper, Wrapper } from "./styled";
-import { Container, Footer, Header, Title } from "@/components";
 import { Link } from "react-router-dom";
 import { routes } from "@/constants";
+import { Container, Footer, Header, Title } from "@/components";
+import { getSectionHeight } from "./helpers";
+import { Button, ContentText, ContentWrapper, Wrapper } from "./styled";
 
 export function ErrorPage() {
     const [height, setHeight] = useState<string>("");

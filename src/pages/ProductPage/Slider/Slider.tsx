@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { ISliderProps } from "./props";
-import { ColumnImageWrapper, ImagesColumn, Image, Wrapper, CurrentImageWrapper } from "./styled";
 import { PRODUCT_SLIDER_DELAY, PRODUCT_SLIDER_IMAGES_COUNT } from "../constants";
+import { ColumnImageWrapper, ImagesColumn, Image, Wrapper, CurrentImageWrapper } from "./styled";
 
 export function Slider({ slides }: ISliderProps) {
     const [currentSlide, setCurrentSlide] = useState<number>(0);

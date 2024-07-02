@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
-import { Container, IconThemeWrapper, ProductsContainer } from "@/components";
-import { FULL_SCREEN_CARD_SCALING_FACTOR, routes } from "@/constants";
-import { productsApi, useGetProductByIdQuery } from "@/store";
 import { AngleIconDark, AngleIconLight } from "@/assets";
+import { productsApi } from "@/store";
+import { FULL_SCREEN_CARD_SCALING_FACTOR, routes } from "@/constants";
+import { Container, IconThemeWrapper, ProductsContainer } from "@/components";
 import { Slider } from "./Slider";
 import { ProductInfo } from "./ProductInfo";
 import { ProductDescription } from "./ProductDescription";
@@ -21,7 +21,7 @@ import { ErrorPage } from "../ErrorPage";
 export function ProductPage() {
     const { id } = useParams();
 
-    const { data: product, isError } = useGetProductByIdQuery(id as string);
+    const { data: product, isError } = productsApi.useGetProductByIdQuery(id as string);
     const slides: string[] = useMemo(() => new Array(4).fill(product?.image), [product]);
 
     const [fetchSimilarProducts, { data: similarProducts }] =

@@ -22,7 +22,7 @@ export const ShopLinkSpan = styled.span`
     font-size: 14px;
     font-weight: 400;
     margin-right: 0px;
-
+    color: ${({ theme }) => theme.colors.main.black};
     @media (min-width: 420px) {
         font-size: 16px;
     }

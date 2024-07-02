@@ -1,16 +1,16 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { setFilters } from "@/store";
+import { FiltersIcon } from "@/assets";
+import { useMediaQuery } from "@/utils";
 import { PRODUCT_SORT_ORDERS } from "@/types";
 import { Dropdown } from "./Dropdown";
 import { Input } from "./Input";
 import { IFormProps } from "./props";
 import { Range } from "./Range";
-import { useMediaQuery } from "@/utils";
-import { HIDE_FORM_BREAKPOINT } from "../constants";
-import { useState } from "react";
 import * as Styled from "./styled";
-import { FiltersIcon } from "@/assets";
-import { useDispatch } from "react-redux";
-import { Inputs } from "../types";
-import { setFilters } from "@/store";
+import { FilterFormInputs } from "../types";
+import { HIDE_FORM_BREAKPOINT } from "../constants";
 
 export function Form({ categories, minPrice, maxPrice }: IFormProps) {
     const dispatch = useDispatch();
@@ -22,7 +22,7 @@ export function Form({ categories, minPrice, maxPrice }: IFormProps) {
         setIsFormOpen((prev) => !prev);
     };
 
-    const [formState, setFormState] = useState<Inputs>({
+    const [formState, setFormState] = useState<FilterFormInputs>({
         title: "",
         category: "",
         sortOrder: PRODUCT_SORT_ORDERS.RATE_DESC,

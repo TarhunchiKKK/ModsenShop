@@ -1,11 +1,11 @@
+import { IProduct } from "@/types";
 import { productsApi, useAppSelector } from "@/store";
 import { Container, ProductsContainer, Title } from "@/components";
+import { filterProducts, getExtremePrices, useMediaQuery } from "@/utils";
 import { FULL_SCREEN_CARD_SCALING_FACTOR, PART_SCREEN_CARD_SCALING_FACTOR } from "@/constants";
-import { CHANCGE_SCALING_BREAKPOINT, PRODUCTS_COUNT } from "./constants";
 import { Form } from "./Form";
 import { ContentWrapper, FormWrapper, Section } from "./styled";
-import { filterProducts, getExtremePrices, useMediaQuery } from "@/utils";
-import { IProduct } from "@/types";
+import { CHANCGE_SCALING_BREAKPOINT, PRODUCTS_COUNT } from "./constants";
 
 export function ShopPage() {
     const { data: categories } = productsApi.useGetCategoriesQuery();

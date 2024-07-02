@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { useGetProductsQuery } from "@/store";
+import { productsApi } from "@/store";
 import { Container, Title, ProductsContainer } from "@/components";
 import { FULL_SCREEN_CARD_SCALING_FACTOR, routes } from "@/constants";
 import { Slider } from "./Slider";
@@ -13,8 +13,8 @@ import {
 } from "./styled";
 
 export function HomePage() {
-    const { data: sliderProducts } = useGetProductsQuery(SLIDES_COUNT);
-    const { data: products } = useGetProductsQuery(HOME_PAGE_PRODUCTS_LIMIT);
+    const { data: sliderProducts } = productsApi.useGetProductsQuery(SLIDES_COUNT);
+    const { data: products } = productsApi.useGetProductsQuery(HOME_PAGE_PRODUCTS_LIMIT);
 
     return (
         <>

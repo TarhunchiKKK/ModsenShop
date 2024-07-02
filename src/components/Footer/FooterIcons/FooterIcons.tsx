@@ -1,4 +1,4 @@
-import { SocialNetworks } from "../data";
+import { SocialNetworks } from "../constants";
 import { FollowSpan, FooterIconsWrapper, Icon, IconLink } from "./styled";
 
 export function FooterIcons() {

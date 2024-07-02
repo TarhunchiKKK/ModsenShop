@@ -34,6 +34,3 @@ export const productsApi = createApi({
         }),
     }),
 });
-
-export const { useGetProductsQuery, useGetProductByIdQuery, useGetProductsByCategoryQuery } =
-    productsApi;

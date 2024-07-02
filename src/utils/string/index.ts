@@ -1,1 +1,1 @@
-export { capitalizeString } from "./capitalizeStr";
+export { capitalizeString } from "./capitalizeString";

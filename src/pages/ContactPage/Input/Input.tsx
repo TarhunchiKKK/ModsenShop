@@ -1,11 +1,11 @@
+import { useState } from "react";
 import { RegisterOptions } from "react-hook-form";
-import { ErrorMessage, InputWrapper, ResetIcon, StyledInput } from "./styled";
 import { EMAIL_PATTERN } from "@/constants";
 import { capitalizeString } from "@/utils";
 import { ResetInputIcon } from "@/assets";
-import { useState } from "react";
 import { ContactFormInputs } from "../types";
 import { IInputProps } from "./props";
+import { ErrorMessage, InputWrapper, ResetIcon, StyledInput } from "./styled";
 
 export function Input({
     placeholder,

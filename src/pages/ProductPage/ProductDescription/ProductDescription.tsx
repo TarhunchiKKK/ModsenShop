@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { IProductDescriptionProps } from "./props";
-import { AngleWrapper, Description, TitleDiv, Wrapper, WrapperTitle } from "./styled";
+import { useMediaQuery } from "@/utils";
 import { IconThemeWrapper } from "@/components";
 import { AngleIconDark, AngleIconLight } from "@/assets";
-import { useMediaQuery } from "@/utils";
+import { IProductDescriptionProps } from "./props";
 import { PRODUCT_DETAIL_BREAKPOINT } from "../constants";
+import { AngleWrapper, Description, TitleDiv, Wrapper, WrapperTitle } from "./styled";
 
 export function ProductDescription({ description }: IProductDescriptionProps) {
     const [isOpen, setIsOpen] = useState<boolean>(false);

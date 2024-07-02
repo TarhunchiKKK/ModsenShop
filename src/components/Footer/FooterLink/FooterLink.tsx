@@ -4,7 +4,7 @@ import { IFooterLinkProps } from "./props";
 
 export function FooterLink({ content, link }: IFooterLinkProps) {
     return (
-        <Link to={link} style={{ color: "inherit" }}>
+        <Link to={link}>
             <FooterLinkSpan>{content}</FooterLinkSpan>
         </Link>
     );

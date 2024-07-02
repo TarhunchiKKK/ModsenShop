@@ -1,9 +1,9 @@
+import { useState } from "react";
 import { useMediaQuery } from "@/utils";
-import { PRODUCT_INFO_BREAKPOINT, SocialNetworks, Stars } from "../constants";
-import { getBackgroundSize } from "../helpers";
 import { IProductInfoProps } from "./props";
 import * as Styled from "./styled";
-import { useState } from "react";
+import { getBackgroundSize } from "../helpers";
+import { PRODUCT_INFO_BREAKPOINT, SocialNetworks, Stars } from "../constants";
 
 export function ProductInfo({ product }: IProductInfoProps) {
     const { isMatch: isViewMoreVisible } = useMediaQuery(PRODUCT_INFO_BREAKPOINT);

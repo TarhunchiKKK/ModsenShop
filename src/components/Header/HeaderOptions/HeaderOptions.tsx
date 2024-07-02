@@ -1,8 +1,9 @@
-import { toggleBurger, useAppSelector } from "@/store";
 import { useDispatch } from "react-redux";
-import { useBurgerLayout } from "../helpers";
 import { Link } from "react-router-dom";
-import { IconThemeWrapper } from "@/components/IconThemeWrapper";
+import { toggleBurger, useAppSelector } from "@/store";
+import { IconThemeWrapper } from "@/components";
+import { routes } from "@/constants";
+import { useMediaQuery } from "@/utils";
 import {
     BasketIconDark,
     BasketIconLight,
@@ -14,14 +15,14 @@ import {
     SearchIconLight,
 } from "@/assets";
 import { Switch } from "../Switch";
-import { ShopLinkSpan, Wrapper } from "./styled";
 import { BurgerMenu } from "../BurgerMenu";
-import { routes } from "@/constants";
+import { BURGER_MENU_BREAKPOINT } from "../constants";
+import { ShopLinkSpan, Wrapper } from "./styled";
 
 export function HeaderOptions() {
     const dispatch = useDispatch();
     const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burger);
-    const { isBurgerVisible } = useBurgerLayout();
+    const { isMatch: isBurgerVisible } = useMediaQuery(BURGER_MENU_BREAKPOINT);
 
     const handleBurgerClick = () => {
         dispatch(toggleBurger());
@@ -31,7 +32,7 @@ export function HeaderOptions() {
         <Wrapper>
             {!isBurgerVisible && (
                 <>
-                    <Link to={routes.shop} style={{ color: "inherit" }}>
+                    <Link to={routes.shop}>
                         <ShopLinkSpan>Shop</ShopLinkSpan>
                     </Link>
 

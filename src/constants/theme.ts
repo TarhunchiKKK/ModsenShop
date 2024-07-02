@@ -30,12 +30,29 @@ interface ITheme {
     productImageSize: Record<ProductImageBreakpoint, string>;
 }
 
+const shared: Omit<ITheme, "background" | "colors"> = {
+    fonts: {
+        primary: "'DM Sans', sans-serif",
+        logo: "'Allerta Stencil', sans-serif",
+    },
+    transitions: {
+        links: "all 0.5s",
+        buttons: "all 0.5s",
+    },
+    productImageSize: {
+        [320]: "8.5em",
+        [440]: "12.5em",
+        [640]: "15.625em",
+        [768]: "12.5em",
+        [1024]: "18.75em",
+        [1280]: "21.25em",
+        [1440]: "23.75em",
+    },
+};
+
 export const Themes: Record<THEMES, ITheme> = {
     light: {
-        fonts: {
-            primary: "'DM Sans', sans-serif",
-            logo: "'Allerta Stencil', sans-serif",
-        },
+        ...shared,
         background: "#FFFFFF",
         colors: {
             main: {
@@ -52,25 +69,9 @@ export const Themes: Record<THEMES, ITheme> = {
                 error: "#D82700",
             },
         },
-        transitions: {
-            links: "all 0.5s",
-            buttons: "all 0.5s",
-        },
-        productImageSize: {
-            [320]: "8.5em",
-            [440]: "12.5em",
-            [640]: "15.625em",
-            [768]: "12.5em",
-            [1024]: "18.75em",
-            [1280]: "21.25em",
-            [1440]: "23.75em",
-        },
     },
     dark: {
-        fonts: {
-            primary: "'DM Sans', sans-serif",
-            logo: "'Allerta Stencil', sans-serif",
-        },
+        ...shared,
         background: "#000000",
         colors: {
             main: {
@@ -86,19 +87,6 @@ export const Themes: Record<THEMES, ITheme> = {
             service: {
                 error: "#D82700",
             },
-        },
-        transitions: {
-            links: "all 0.5s",
-            buttons: "all 0.7s",
-        },
-        productImageSize: {
-            [320]: "8.5em",
-            [440]: "12.5em",
-            [640]: "15.625em",
-            [768]: "12.5em",
-            [1024]: "18.75em",
-            [1280]: "21.25em",
-            [1440]: "23.75em",
         },
     },
 };

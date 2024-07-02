@@ -1,1 +1,1 @@
-export type { Inputs } from "./Inputs";
+export type { FilterFormInputs } from "./FilterFormts";

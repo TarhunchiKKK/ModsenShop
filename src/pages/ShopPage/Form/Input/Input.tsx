@@ -1,6 +1,6 @@
 import { IconThemeWrapper } from "@/components";
-import * as Styled from "./styled";
 import { SearchIconDark, SearchIconLight } from "@/assets";
+import * as Styled from "./styled";
 import { IInputProps } from "./props";
 
 export function Input({ value, onChange, marginBottom }: IInputProps) {

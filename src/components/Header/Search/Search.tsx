@@ -1,6 +1,6 @@
+import { SubmitHandler, useForm } from "react-hook-form";
 import { SearchIconGray } from "@/assets";
 import { Form, Input } from "./styled";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { SearchInputs } from "../types";
 
 export function Search() {

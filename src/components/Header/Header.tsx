@@ -1,13 +1,14 @@
 import { Link } from "react-router-dom";
-import { Container } from "../Container";
-import { useBurgerLayout } from "./helpers";
-import { Search } from "./Search";
-import { HeaderContentWrapper, LogoEndSpan, LogoStartSpan, StyledHeader } from "./styled";
-import { HeaderOptions } from "./HeaderOptions";
 import { routes } from "@/constants";
+import { useMediaQuery } from "@/utils";
+import { Container } from "../Container";
+import { Search } from "./Search";
+import { HeaderOptions } from "./HeaderOptions";
+import { BURGER_MENU_BREAKPOINT } from "./constants";
+import { HeaderContentWrapper, LogoEndSpan, LogoStartSpan, StyledHeader } from "./styled";
 
 export const Header = () => {
-    const { isBurgerVisible } = useBurgerLayout();
+    const { isMatch: isBurgerVisible } = useMediaQuery(BURGER_MENU_BREAKPOINT);
 
     return (
         <StyledHeader>

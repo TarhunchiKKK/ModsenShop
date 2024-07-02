@@ -22,6 +22,7 @@ export const MenuOption = styled.span`
     font-weight: 400;
     line-height: 26px;
     text-transform: uppercase;
+    color: ${({ theme }) => theme.colors.main.black};
 
     &:hover {
         color: ${({ theme }) => theme.colors.neutral.darkGray};

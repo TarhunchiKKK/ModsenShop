@@ -1,15 +1,15 @@
 import { sendIdea } from "@/utils";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { Button, FirstInputsPairWrapper, SecondInputsPairWrapper, StyledForm } from "./styled";
 import { Input } from "../Input";
 import { ContactFormInputs } from "../types";
+import { Button, FirstInputsPairWrapper, SecondInputsPairWrapper, StyledForm } from "./styled";
 
 export function Form() {
     const {
         register,
         handleSubmit,
         formState: { errors },
-        reset
+        reset,
     } = useForm<ContactFormInputs>();
 
     const onSubmit: SubmitHandler<ContactFormInputs> = (data) => {
