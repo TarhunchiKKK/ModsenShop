@@ -4,3 +4,6 @@ dist/
 build/
 .env
 /**/mocks
+public/index.html
+yarn.lock
+.github
