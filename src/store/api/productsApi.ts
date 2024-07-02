@@ -27,6 +27,11 @@ export const productsApi = createApi({
                 url: `/category/${category}`,
             }),
         }),
+        getCategories: builder.query<string[], void>({
+            query: () => ({
+                url: "/categories",
+            }),
+        }),
     }),
 });
 
