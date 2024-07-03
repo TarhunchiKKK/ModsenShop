@@ -1,6 +1,8 @@
 import { THEMES } from "@/types";
 
-export function setInitialColorTheme(themeKey: string) {
+export function setInitialColorTheme() {
+    const themeKey: string = import.meta.env.VITE_THEME_LOCALSTORAGE_KEY;
+
     const currentTheme: THEMES | null = localStorage.getItem(themeKey) as THEMES | null;
 
     if (currentTheme === null) {

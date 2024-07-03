@@ -1,6 +1,8 @@
 import { THEMES } from "@/types";
 
-export function toggleColorTheme(themeKey: string) {
+export function toggleColorTheme() {
+    const themeKey: string = import.meta.env.VITE_THEME_LOCALSTORAGE_KEY;
+
     const currentTheme: THEMES = localStorage.getItem(themeKey) as THEMES;
     const nextTheme: THEMES = currentTheme === THEMES.LIGHT ? THEMES.DARK : THEMES.LIGHT;
 

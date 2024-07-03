@@ -1,6 +1,6 @@
 import { Firestore } from "firebase/firestore";
-import { AuthorizationResult } from "./AuthorizationResult";
 import { Auth } from "firebase/auth";
+import { AuthorizationResult } from "@/api/types";
 
 export interface IFirebaseContextState {
     firestore: Firestore;

@@ -2,9 +2,9 @@ import { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addDoc, collection } from "firebase/firestore";
 import { IProduct } from "@/types";
-import { CARTS_PATH } from "@/firebase/constants";
 import { addProductToLocalStorage } from "@/store";
-import { FirebaseContext } from "../../FirebaseContext";
+import { FirebaseContext } from "@/contexts";
+import { CARTS_PATH } from "../../constants";
 
 export function useCreateCartMutation() {
     const dispatch = useDispatch();

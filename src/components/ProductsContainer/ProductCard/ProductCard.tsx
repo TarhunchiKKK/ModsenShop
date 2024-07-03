@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { routes } from "@/constants";
+import { cartApi } from "@/api";
 import { IProductCardProps } from "./props";
 import {
     CardWrapper,
@@ -11,7 +12,6 @@ import {
     ShadowDiv,
     ShadowLinkText,
 } from "./styled";
-import { cartApi } from "@/firebase";
 
 export function ProductCard({ product }: IProductCardProps) {
     const navigate = useNavigate();

@@ -1,10 +1,10 @@
 import { useContext, useState } from "react";
 import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
 import { IProduct, IStoredProduct } from "@/types";
-import { CARTS_PATH } from "@/firebase/constants";
-import { FirebaseContext } from "@/firebase/FirebaseContext";
 import { useDispatch } from "react-redux";
 import { saveProductsToLocalStorage, useAppSelector } from "@/store";
+import { FirebaseContext } from "@/contexts";
+import { CARTS_PATH } from "@/api/constants";
 
 export function useLazyGetCartsQuery() {
     const dispatch = useDispatch();

@@ -1,12 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useSelector } from "react-redux";
-import { burgerSlice, productFiltersSlice, cartSlice, themeSlice } from "./slices";
-import { productsApi } from "./api";
+import { productFiltersSlice, cartSlice, UISlice } from "./slices";
+import { productsApi } from "@/api";
 
 export const store = configureStore({
     reducer: {
-        [themeSlice.name]: themeSlice.reducer,
-        [burgerSlice.name]: burgerSlice.reducer,
+        [UISlice.name]: UISlice.reducer,
         [productFiltersSlice.name]: productFiltersSlice.reducer,
         [cartSlice.name]: cartSlice.reducer,
         [productsApi.reducerPath]: productsApi.reducer,

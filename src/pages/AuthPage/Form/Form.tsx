@@ -1,11 +1,11 @@
 import { useContext, useState } from "react";
-import * as Styled from "./styled";
-import { GoogleIcon } from "@/assets";
-import { FirebaseContext } from "@/firebase";
-import { useNavigate } from "react-router-dom";
-import { routes } from "@/constants";
 import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { GoogleIcon } from "@/assets";
+import { routes } from "@/constants";
 import { setUser } from "@/store";
+import { FirebaseContext } from "@/contexts";
+import * as Styled from "./styled";
 
 export function Form() {
     const { authWithGoogle, authWithPassword, registerWithPassword } = useContext(FirebaseContext);

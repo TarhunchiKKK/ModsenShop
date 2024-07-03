@@ -27,7 +27,7 @@ export const userSlice = createSlice({
     reducers: {
         setUser(state, action: PayloadAction<User>) {
             state.user = action.payload;
-            localStorage.set;
+            localStorage.setItem(state.userKey, JSON.stringify(state.user));
         },
         resetUser(state) {
             state.user = null;

@@ -21,7 +21,7 @@ import { ShopLinkSpan, Wrapper } from "./styled";
 
 export function HeaderOptions() {
     const dispatch = useDispatch();
-    const { isOpen: isBurgerOpen } = useAppSelector((state) => state.burger);
+    const { isBurgerOpen } = useAppSelector((state) => state.UI);
     const { isMatch: isBurgerVisible } = useMediaQuery(BURGER_MENU_BREAKPOINT);
 
     const handleBurgerClick = () => {

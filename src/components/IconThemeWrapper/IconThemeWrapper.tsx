@@ -4,7 +4,7 @@ import { IconWrapper } from "./styled";
 import { IIconWrapperProps } from "./props";
 
 export function IconThemeWrapper({ srcLight, srcDark, ...other }: IIconWrapperProps) {
-    const theme: THEMES = useAppSelector((state) => state.theme.theme);
+    const theme: THEMES = useAppSelector((state) => state.UI.theme);
 
     return (
         <IconWrapper>

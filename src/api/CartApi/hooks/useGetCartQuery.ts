@@ -3,8 +3,8 @@ import { useDispatch } from "react-redux";
 import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
 import { IProduct, IStoredProduct } from "@/types";
 import { saveProductsToLocalStorage, useAppSelector } from "@/store";
+import { FirebaseContext } from "@/contexts";
 import { CARTS_PATH } from "../../constants";
-import { FirebaseContext } from "../../FirebaseContext";
 
 export function useGetCartsQuery() {
     const dispatch = useDispatch();

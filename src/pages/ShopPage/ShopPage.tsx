@@ -1,5 +1,6 @@
 import { IProduct } from "@/types";
-import { productsApi, useAppSelector } from "@/store";
+import { productsApi } from "@/api";
+import { useAppSelector } from "@/store";
 import { Container, ProductsContainer, Title } from "@/components";
 import { filterProducts, getExtremePrices, useMediaQuery } from "@/utils";
 import { FULL_SCREEN_CARD_SCALING_FACTOR, PART_SCREEN_CARD_SCALING_FACTOR } from "@/constants";

@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { doc, updateDoc, deleteField } from "firebase/firestore";
-import { FirebaseContext } from "@/firebase";
-import { CARTS_PATH } from "@/firebase/constants";
 import { removeProductFromLocalStorage, useAppSelector } from "@/store";
+import { FirebaseContext } from "@/contexts";
+import { CARTS_PATH } from "@/api/constants";
 
 export function useRemoveCartMutation() {
     const { firestore } = useContext(FirebaseContext);

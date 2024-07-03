@@ -1,7 +1,7 @@
 import { Container, ProductsContainer, Title } from "@/components";
 import { Section, TitleWrapper } from "./styled";
-import { cartApi } from "@/firebase";
 import { FULL_SCREEN_CARD_SCALING_FACTOR } from "@/constants";
+import { cartApi } from "@/api";
 
 export function CartPage() {
     const { products } = cartApi.useGetCartsQuery();
