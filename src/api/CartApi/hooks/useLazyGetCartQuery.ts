@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
 import { IProduct, IStoredProduct } from "@/types";
 import { useDispatch } from "react-redux";
@@ -15,7 +15,7 @@ export function useLazyGetCartsQuery() {
 
     const [isError, setIsError] = useState<boolean>(false);
 
-    async function fetchCarts() {
+    const fetchCarts = useCallback(async () => {
         try {
             setIsError(false);
 
@@ -38,7 +38,7 @@ export function useLazyGetCartsQuery() {
             setIsError(true);
             console.error("Error fetching documents: ", error);
         }
-    }
+    }, [dispatch, firestore]);
 
     return [fetchCarts, { products: products.map((product) => product.data), isError }] as const;
 }

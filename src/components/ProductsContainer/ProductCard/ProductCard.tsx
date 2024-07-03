@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { useAuth, useProductIncart } from "@/utils";
 import { routes } from "@/constants";
 import { cartApi } from "@/api";
 import { IProductCardProps } from "./props";
@@ -15,7 +16,12 @@ import {
 
 export function ProductCard({ product }: IProductCardProps) {
     const navigate = useNavigate();
+
     const [createCart] = cartApi.useCreateCartMutation();
+    const [removeCart] = cartApi.useRemoveCartMutation();
+
+    const isInCart = useProductIncart(product);
+    const isAuth = useAuth();
 
     const handleRedirect = () => {
         navigate(`${routes.product}/${product.id}`);
@@ -23,7 +29,15 @@ export function ProductCard({ product }: IProductCardProps) {
 
     const handleAddToCart = async (e: React.MouseEvent<HTMLSpanElement>) => {
         e.stopPropagation();
-        await createCart(product);
+        if (isInCart) {
+            removeCart(product.id);
+        } else {
+            if (isAuth) {
+                await createCart(product);
+            } else {
+                navigate(routes.auth);
+            }
+        }
     };
 
     return (
@@ -33,7 +47,9 @@ export function ProductCard({ product }: IProductCardProps) {
 
                 <ShadowDiv>
                     <ShadowLinkWrapper onClick={(e) => e.stopPropagation()}>
-                        <ShadowLinkText onClick={handleAddToCart}>Add to cart</ShadowLinkText>
+                        <ShadowLinkText onClick={handleAddToCart}>
+                            {isInCart ? "Remove from cart" : "Add to cart"}
+                        </ShadowLinkText>
                     </ShadowLinkWrapper>
                 </ShadowDiv>
             </ImageWrapper>

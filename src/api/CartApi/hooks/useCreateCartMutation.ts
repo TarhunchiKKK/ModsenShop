@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { useDispatch } from "react-redux";
 import { addDoc, collection } from "firebase/firestore";
 import { IProduct } from "@/types";
@@ -13,22 +13,23 @@ export function useCreateCartMutation() {
 
     const [isError, setIsError] = useState<boolean>(false);
 
-    async function createCart(product: IProduct) {
-        try {
-            setIsError(false);
+    const createCart = useCallback(
+        async (product: IProduct) => {
+            try {
+                setIsError(false);
 
-            const documentRef = await addDoc(collection(firestore, CARTS_PATH), {
-                title: product.title,
-                price: product.price,
-                image: product.image,
-            });
+                const documentRef = await addDoc(collection(firestore, CARTS_PATH), {
+                    ...product,
+                });
 
-            dispatch(addProductToLocalStorage({ data: product, id: documentRef.id }));
-        } catch (error: unknown) {
-            setIsError(true);
-            console.error("Error adding document: ", error);
-        }
-    }
+                dispatch(addProductToLocalStorage({ data: product, id: documentRef.id }));
+            } catch (error: unknown) {
+                setIsError(true);
+                console.error("Error adding document: ", error);
+            }
+        },
+        [dispatch, firestore],
+    );
 
     return [createCart, { isError }] as const;
 }

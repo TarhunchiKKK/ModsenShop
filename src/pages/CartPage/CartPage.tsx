@@ -1,10 +1,10 @@
 import { Container, ProductsContainer, Title } from "@/components";
 import { Section, TitleWrapper } from "./styled";
 import { FULL_SCREEN_CARD_SCALING_FACTOR } from "@/constants";
-import { cartApi } from "@/api";
+import { useAppSelector } from "@/store";
 
 export function CartPage() {
-    const { products } = cartApi.useGetCartsQuery();
+    const { products } = useAppSelector((state) => state.cart);
 
     return (
         <Section>
@@ -15,7 +15,7 @@ export function CartPage() {
 
                 {products && (
                     <ProductsContainer
-                        products={products}
+                        products={products.map((product) => product.data)}
                         scalingKoefficient={FULL_SCREEN_CARD_SCALING_FACTOR}
                     />
                 )}

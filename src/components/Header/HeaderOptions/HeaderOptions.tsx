@@ -46,7 +46,13 @@ export function HeaderOptions() {
                 </>
             )}
 
-            <IconThemeWrapper srcLight={BasketIconDark} srcDark={BasketIconLight} alt="Basket" />
+            <Link to={routes.cart}>
+                <IconThemeWrapper
+                    srcLight={BasketIconDark}
+                    srcDark={BasketIconLight}
+                    alt="Basket"
+                />
+            </Link>
 
             {isBurgerVisible && (
                 <IconThemeWrapper

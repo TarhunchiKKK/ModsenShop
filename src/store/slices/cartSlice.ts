@@ -26,6 +26,7 @@ export const cartSlice = createSlice({
         removeProductFromLocalStorage(state, action: PayloadAction<number>) {
             state.products = state.products.filter((product) => product.data.id !== action.payload);
             localStorage.setItem(state.cartKey, JSON.stringify(state.products));
+            console.log(state.products);
         },
     },
 });
