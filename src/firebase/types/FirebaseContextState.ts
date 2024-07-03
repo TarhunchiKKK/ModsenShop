@@ -1,9 +1,11 @@
 import { Firestore } from "firebase/firestore";
-import { GoogleAuthResult } from "./GoogleAuthResult";
+import { AuthorizationResult } from "./AuthorizationResult";
 import { Auth } from "firebase/auth";
 
 export interface IFirebaseContextState {
     firestore: Firestore;
-    googleAuth: Auth;
-    authWithGoogle: () => Promise<GoogleAuthResult>;
+    auth: Auth;
+    authWithGoogle: () => Promise<AuthorizationResult>;
+    authWithPassword: (email: string, password: string) => Promise<AuthorizationResult>;
+    registerWithPassword: (email: string, password: string) => Promise<AuthorizationResult>;
 }

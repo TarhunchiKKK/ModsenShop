@@ -4,9 +4,12 @@ import { GoogleIcon } from "@/assets";
 import { FirebaseContext } from "@/firebase";
 import { useNavigate } from "react-router-dom";
 import { routes } from "@/constants";
+import { useDispatch } from "react-redux";
+import { setUser } from "@/store";
 
 export function Form() {
-    const { authWithGoogle } = useContext(FirebaseContext);
+    const { authWithGoogle, authWithPassword, registerWithPassword } = useContext(FirebaseContext);
+    const dispatch = useDispatch();
     const navigate = useNavigate();
 
     const [email, setEmail] = useState<string>("");
@@ -26,6 +29,19 @@ export function Form() {
         setIsLogin(!isLogin);
     };
 
+    const handleSubmit = async (e: React.FormEvent) => {
+        e.preventDefault();
+        const authFunction = isLogin ? authWithPassword : registerWithPassword;
+        const result = await authFunction(email, password);
+        console.log(result);
+        if (result.success) {
+            dispatch(setUser(result.data.user));
+            navigate(routes.home);
+        } else {
+            navigate(routes.error);
+        }
+    };
+
     const handleAuthWithGoogle = async (e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         const result = await authWithGoogle();
@@ -38,7 +54,7 @@ export function Form() {
     };
 
     return (
-        <Styled.Form>
+        <Styled.Form onSubmit={handleSubmit}>
             <Styled.InputWrapper>
                 <Styled.Input
                     type="text"
@@ -67,7 +83,7 @@ export function Form() {
                 </Styled.AuthProvidersContainer>
             </Styled.AuthorizationWrapper>
 
-            <Styled.SubmitButton>Login</Styled.SubmitButton>
+            <Styled.SubmitButton>{isLogin ? "Login" : "Register"}</Styled.SubmitButton>
 
             <Styled.QuestionButton onClick={handleChangeOperation}>
                 {isLogin ? "Don't have an account?" : "Already have an account?"}
