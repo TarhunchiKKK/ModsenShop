@@ -1,18 +1,17 @@
 import { useContext, useEffect, useState } from "react";
-import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
-import { IProduct } from "@/types";
-import { CARTS_PATH } from "@/firebase/constants";
-import { FirebaseContext } from "@/firebase/FirebaseContext";
 import { useDispatch } from "react-redux";
+import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
+import { IProduct, IStoredProduct } from "@/types";
 import { saveProductsToLocalStorage, useAppSelector } from "@/store";
-import { IStoredProduct } from "@/store/types";
+import { CARTS_PATH } from "../../constants";
+import { FirebaseContext } from "../../FirebaseContext";
 
 export function useGetCartsQuery() {
     const dispatch = useDispatch();
 
     const { products } = useAppSelector((state) => state.cart);
 
-    const { database } = useContext(FirebaseContext);
+    const { firestore } = useContext(FirebaseContext);
 
     const [isError, setIsError] = useState<boolean>(false);
 
@@ -21,7 +20,7 @@ export function useGetCartsQuery() {
             try {
                 setIsError(false);
 
-                const cartCollection = collection(database, CARTS_PATH) as CollectionReference<
+                const cartCollection = collection(firestore, CARTS_PATH) as CollectionReference<
                     IProduct,
                     IProduct
                 >;

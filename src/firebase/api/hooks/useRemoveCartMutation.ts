@@ -6,7 +6,7 @@ import { CARTS_PATH } from "@/firebase/constants";
 import { removeProductFromLocalStorage, useAppSelector } from "@/store";
 
 export function useRemoveCartMutation() {
-    const { database } = useContext(FirebaseContext);
+    const { firestore } = useContext(FirebaseContext);
     const [isError, setIsError] = useState<boolean>(false);
 
     const dispatch = useDispatch();
@@ -21,7 +21,7 @@ export function useRemoveCartMutation() {
                 throw new Error("Product not fount");
             }
 
-            await updateDoc(doc(database, CARTS_PATH, storedProduct.id), {
+            await updateDoc(doc(firestore, CARTS_PATH, storedProduct.id), {
                 capital: deleteField(),
             });
 

@@ -1,15 +1,15 @@
 import { useContext, useState } from "react";
+import { useDispatch } from "react-redux";
 import { addDoc, collection } from "firebase/firestore";
 import { IProduct } from "@/types";
 import { CARTS_PATH } from "@/firebase/constants";
-import { FirebaseContext } from "../../FirebaseContext";
-import { useDispatch } from "react-redux";
 import { addProductToLocalStorage } from "@/store";
+import { FirebaseContext } from "../../FirebaseContext";
 
 export function useCreateCartMutation() {
     const dispatch = useDispatch();
 
-    const { database } = useContext(FirebaseContext);
+    const { firestore } = useContext(FirebaseContext);
 
     const [isError, setIsError] = useState<boolean>(false);
 
@@ -17,7 +17,7 @@ export function useCreateCartMutation() {
         try {
             setIsError(false);
 
-            const documentRef = await addDoc(collection(database, CARTS_PATH), {
+            const documentRef = await addDoc(collection(firestore, CARTS_PATH), {
                 title: product.title,
                 price: product.price,
                 image: product.image,

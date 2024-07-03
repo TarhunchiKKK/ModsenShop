@@ -1,9 +1,9 @@
-import { Analytics } from "firebase/analytics";
-import { FirebaseApp } from "firebase/app";
 import { Firestore } from "firebase/firestore";
+import { GoogleAuthResult } from "./GoogleAuthResult";
+import { Auth } from "firebase/auth";
 
 export interface IFirebaseContextState {
-    application: FirebaseApp;
-    database: Firestore;
-    analytics: Analytics;
+    firestore: Firestore;
+    googleAuth: Auth;
+    authWithGoogle: () => Promise<GoogleAuthResult>;
 }
