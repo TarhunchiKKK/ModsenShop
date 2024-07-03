@@ -15,7 +15,7 @@ export function CartPage() {
 
                 {products && (
                     <ProductsContainer
-                        products={products.map((product) => product.data)}
+                        products={products}
                         scalingKoefficient={FULL_SCREEN_CARD_SCALING_FACTOR}
                     />
                 )}

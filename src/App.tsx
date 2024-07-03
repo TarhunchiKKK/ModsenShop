@@ -7,11 +7,14 @@ import { cartApi } from "./api";
 
 export function App() {
     const { theme } = useAppSelector((state) => state.UI);
+    const { user } = useAppSelector((state) => state.user);
     const [fetchCart] = cartApi.useLazyGetCartsQuery();
 
     useEffect(() => {
-        fetchCart();
-    }, [fetchCart]);
+        if (user) {
+            fetchCart(user.id);
+        }
+    }, [fetchCart, user]);
 
     return (
         <ThemeProvider theme={Themes[theme]}>

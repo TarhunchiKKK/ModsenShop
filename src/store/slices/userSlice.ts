@@ -1,8 +1,8 @@
+import { IUserData } from "@/types";
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { User } from "firebase/auth";
 
 interface UserState {
-    user: User | null;
+    user: IUserData | null;
     userKey: string;
 }
 
@@ -17,7 +17,7 @@ function getInitialState(): UserState {
     }
     return {
         userKey,
-        user: JSON.parse(storedData) as User,
+        user: JSON.parse(storedData) as IUserData,
     };
 }
 
@@ -25,7 +25,7 @@ export const userSlice = createSlice({
     name: "user",
     initialState: getInitialState(),
     reducers: {
-        setUser(state, action: PayloadAction<User>) {
+        setUser(state, action: PayloadAction<IUserData>) {
             state.user = action.payload;
             localStorage.setItem(state.userKey, JSON.stringify(state.user));
         },

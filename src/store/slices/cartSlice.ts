@@ -1,13 +1,13 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { IStoredProduct } from "@/types";
+import { IProduct } from "@/types";
 
 interface CartState {
-    products: IStoredProduct[];
+    products: IProduct[];
     cartKey: string;
 }
 
 const initialState: CartState = {
-    products: [] as IStoredProduct[],
+    products: [] as IProduct[],
     cartKey: import.meta.env.VITE_LOCALSTORAGE_CART_KEY,
 };
 
@@ -15,18 +15,17 @@ export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        saveProductsToLocalStorage(state, action: PayloadAction<IStoredProduct[]>) {
+        saveProductsToLocalStorage(state, action: PayloadAction<IProduct[]>) {
             state.products = action.payload;
             localStorage.setItem(state.cartKey, JSON.stringify(state.products));
         },
-        addProductToLocalStorage(state, action: PayloadAction<IStoredProduct>) {
+        addProductToLocalStorage(state, action: PayloadAction<IProduct>) {
             state.products.push(action.payload);
             localStorage.setItem(state.cartKey, JSON.stringify(state.products));
         },
         removeProductFromLocalStorage(state, action: PayloadAction<number>) {
-            state.products = state.products.filter((product) => product.data.id !== action.payload);
+            state.products = state.products.filter((product) => product.id !== action.payload);
             localStorage.setItem(state.cartKey, JSON.stringify(state.products));
-            console.log(state.products);
         },
     },
 });

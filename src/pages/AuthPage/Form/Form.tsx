@@ -35,7 +35,13 @@ export function Form() {
         const result = await authFunction(email, password);
         console.log(result);
         if (result.success) {
-            dispatch(setUser(result.data.user));
+            dispatch(
+                setUser({
+                    id: result.data.user.uid,
+                    email: result.data.user.email,
+                    token: result.data.token,
+                }),
+            );
             navigate(routes.home);
         } else {
             navigate(routes.error);
@@ -47,6 +53,13 @@ export function Form() {
         const result = await authWithGoogle();
         console.log(result);
         if (result.success) {
+            dispatch(
+                setUser({
+                    id: result.data.user.uid,
+                    email: result.data.user.email,
+                    token: result.data.token,
+                }),
+            );
             navigate(routes.home);
         } else {
             navigate(routes.error);

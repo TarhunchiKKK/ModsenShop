@@ -14,5 +14,6 @@ const value: IFirebaseContextState = {
 };
 
 export function FirebaseContextProvider({ children }: IFirebaseContextProviderProps) {
+    console.log(auth.currentUser);
     return <FirebaseContext.Provider value={value}>{children}</FirebaseContext.Provider>;
 }

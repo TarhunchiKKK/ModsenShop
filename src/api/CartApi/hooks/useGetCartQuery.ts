@@ -1,12 +1,12 @@
 import { useContext, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
-import { IProduct, IStoredProduct } from "@/types";
+import { doc, getDoc } from "firebase/firestore";
+import { IProduct } from "@/types";
 import { saveProductsToLocalStorage, useAppSelector } from "@/store";
 import { FirebaseContext } from "@/contexts";
 import { CARTS_PATH } from "../../constants";
 
-export function useGetCartsQuery() {
+export function useGetCartsQuery(userId: string) {
     const dispatch = useDispatch();
 
     const { products } = useAppSelector((state) => state.cart);
@@ -20,21 +20,15 @@ export function useGetCartsQuery() {
             try {
                 setIsError(false);
 
-                const cartCollection = collection(firestore, CARTS_PATH) as CollectionReference<
-                    IProduct,
-                    IProduct
-                >;
-                const querySnapshot: QuerySnapshot<IProduct, IProduct> = await getDocs<
-                    IProduct,
-                    IProduct
-                >(cartCollection);
+                const querySnapshot = await getDoc(doc(firestore, CARTS_PATH, userId));
 
-                const data: IStoredProduct[] = [];
-                querySnapshot.forEach((document) => {
-                    data.push({ id: document.id, data: document.data() });
-                });
-
-                dispatch(saveProductsToLocalStorage(data));
+                if (querySnapshot.exists()) {
+                    dispatch(
+                        saveProductsToLocalStorage(querySnapshot.data().products as IProduct[]),
+                    );
+                } else {
+                    dispatch(saveProductsToLocalStorage([]));
+                }
             } catch (error: unknown) {
                 setIsError(true);
                 console.error("Error fetching documents: ", error);
@@ -44,5 +38,5 @@ export function useGetCartsQuery() {
         fetchCarts();
     });
 
-    return { products: products.map((product) => product.data), isError };
+    return { products, isError };
 }

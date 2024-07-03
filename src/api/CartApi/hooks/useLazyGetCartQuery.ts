@@ -1,10 +1,10 @@
 import { useCallback, useContext, useState } from "react";
-import { collection, CollectionReference, getDocs, QuerySnapshot } from "firebase/firestore";
-import { IProduct, IStoredProduct } from "@/types";
 import { useDispatch } from "react-redux";
+import { doc, getDoc } from "firebase/firestore";
 import { saveProductsToLocalStorage, useAppSelector } from "@/store";
 import { FirebaseContext } from "@/contexts";
 import { CARTS_PATH } from "@/api/constants";
+import { IProduct } from "@/types";
 
 export function useLazyGetCartsQuery() {
     const dispatch = useDispatch();
@@ -15,30 +15,27 @@ export function useLazyGetCartsQuery() {
 
     const [isError, setIsError] = useState<boolean>(false);
 
-    const fetchCarts = useCallback(async () => {
-        try {
-            setIsError(false);
+    const fetchCarts = useCallback(
+        async (userId: string) => {
+            try {
+                setIsError(false);
 
-            const cartCollection = collection(firestore, CARTS_PATH) as CollectionReference<
-                IProduct,
-                IProduct
-            >;
-            const querySnapshot: QuerySnapshot<IProduct, IProduct> = await getDocs<
-                IProduct,
-                IProduct
-            >(cartCollection);
+                const querySnapshot = await getDoc(doc(firestore, CARTS_PATH, userId));
 
-            const data: IStoredProduct[] = [];
-            querySnapshot.forEach((document) => {
-                data.push({ id: document.id, data: document.data() });
-            });
+                if (querySnapshot.exists()) {
+                    dispatch(
+                        saveProductsToLocalStorage(querySnapshot.data().products as IProduct[]),
+                    );
+                } else {
+                    dispatch(saveProductsToLocalStorage([]));
+                }
+            } catch (error: unknown) {
+                setIsError(true);
+                console.error("Error fetching documents: ", error);
+            }
+        },
+        [dispatch, firestore],
+    );
 
-            dispatch(saveProductsToLocalStorage(data));
-        } catch (error: unknown) {
-            setIsError(true);
-            console.error("Error fetching documents: ", error);
-        }
-    }, [dispatch, firestore]);
-
-    return [fetchCarts, { products: products.map((product) => product.data), isError }] as const;
+    return [fetchCarts, { products, isError }] as const;
 }
