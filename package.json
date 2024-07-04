@@ -11,7 +11,8 @@
         "lint": "eslint \"./src/**/*.{ts,tsx,json}\" --color",
         "lint:fix": "eslint --fix \"./src/**/*.{ts,tsx,json}\" --color",
         "format": "prettier --write \"./src/**/*.{ts,tsx,json,css,md}\"",
-        "preview": "vite preview"
+        "preview": "vite preview",
+        "test:unit": "jest"
     },
     "dependencies": {
         "@emailjs/browser": "^4.3.3",
@@ -28,6 +29,8 @@
         "react-router-dom": "^6.23.1"
     },
     "devDependencies": {
+        "@jest/globals": "^29.7.0",
+        "@types/jest": "^29.5.12",
         "@types/react": "^18.2.66",
         "@types/react-dom": "^18.2.22",
         "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -44,6 +47,7 @@
         "lint-staged": "^15.2.7",
         "prettier": "^3.3.2",
         "styled-components": "^6.1.11",
+        "ts-jest": "^29.1.5",
         "typescript": "^5.2.2",
         "typescript-eslint": "^7.13.0",
         "typescript-eslint-parser": "^22.0.0",
