@@ -1,9 +1,3 @@
-describe("template spec", () => {
-    it("passes", () => {
-        cy.visit("https://example.cypress.io");
-    });
-});
-
 describe("Navigation tests", () => {
     beforeEach(() => {
         cy.visit(Cypress.env("home_url"));
