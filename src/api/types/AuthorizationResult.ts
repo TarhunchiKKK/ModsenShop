@@ -1,5 +1,3 @@
 import { User } from "firebase/auth";
 
-export type AuthorizationResult =
-    | { data: { user: User; token: string | undefined }; success: true }
-    | { data: null; success: false };
+export type AuthorizationResult = { user: User; success: true } | { user: null; success: false };

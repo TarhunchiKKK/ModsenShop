@@ -37,9 +37,9 @@ export function Form() {
         if (result.success) {
             dispatch(
                 setUser({
-                    id: result.data.user.uid,
-                    email: result.data.user.email,
-                    token: result.data.token,
+                    id: result.user.uid,
+                    email: result.user.email,
+                    token: result.user.refreshToken,
                 }),
             );
             navigate(routes.home);
@@ -55,9 +55,9 @@ export function Form() {
         if (result.success) {
             dispatch(
                 setUser({
-                    id: result.data.user.uid,
-                    email: result.data.user.email,
-                    token: result.data.token,
+                    id: result.user.uid,
+                    email: result.user.email,
+                    token: result.user.refreshToken,
                 }),
             );
             navigate(routes.home);
