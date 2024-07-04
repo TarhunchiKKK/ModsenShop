@@ -15,7 +15,7 @@ export function Switch() {
             <input
                 className="switch-checkbox"
                 type="checkbox"
-                defaultChecked={useAppSelector((state) => state.theme.theme) === THEMES.DARK}
+                defaultChecked={useAppSelector((state) => state.UI.theme) === THEMES.DARK}
             />
             <span className="switch-span" onClick={handleClick}></span>
         </label>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { productsApi } from "@/store";
+import { productsApi } from "@/api";
 import { Container, Title, ProductsContainer } from "@/components";
 import { FULL_SCREEN_CARD_SCALING_FACTOR, routes } from "@/constants";
 import { Slider } from "./Slider";

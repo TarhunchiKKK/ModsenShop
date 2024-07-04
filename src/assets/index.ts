@@ -12,6 +12,7 @@ import CrossIconLight from "./cross-light.svg";
 import AngleIconLight from "./angle-light.svg";
 import AngleIconDark from "./angle-dark.svg";
 import FiltersIcon from "./filters.svg";
+import GoogleIcon from "./google.svg";
 
 export {
     SearchIconDark,
@@ -28,4 +29,5 @@ export {
     AngleIconLight,
     AngleIconDark,
     FiltersIcon,
+    GoogleIcon,
 };

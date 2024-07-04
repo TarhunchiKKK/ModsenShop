@@ -1,9 +1,10 @@
 import { useEffect, useMemo } from "react";
 import { Link, useParams } from "react-router-dom";
+import { productsApi } from "@/api";
 import { AngleIconDark, AngleIconLight } from "@/assets";
-import { productsApi } from "@/store";
 import { FULL_SCREEN_CARD_SCALING_FACTOR, routes } from "@/constants";
 import { Container, IconThemeWrapper, ProductsContainer } from "@/components";
+import { ErrorPage } from "../ErrorPage";
 import { Slider } from "./Slider";
 import { ProductInfo } from "./ProductInfo";
 import { ProductDescription } from "./ProductDescription";
@@ -16,7 +17,6 @@ import {
     ProductContainerWrapper,
     Section,
 } from "./styled";
-import { ErrorPage } from "../ErrorPage";
 
 export function ProductPage() {
     const { id } = useParams();
