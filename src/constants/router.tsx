@@ -10,6 +10,7 @@ import {
     ProductPage,
     ShopPage,
 } from "@/pages";
+import { ProtectedRoute } from "@/components";
 
 export const router = createBrowserRouter([
     {
@@ -32,7 +33,11 @@ export const router = createBrowserRouter([
 
             {
                 path: routes.cart,
-                element: <CartPage />,
+                element: (
+                    <ProtectedRoute>
+                        <CartPage />
+                    </ProtectedRoute>
+                ),
             },
             {
                 path: routes.contact,
